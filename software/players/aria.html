@@ -1,0 +1,2134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>ARIA Engine - SFZ Format</title>
+
+		<meta name="author" content="Karoryfer Samples and SFZ Format Team">
+		<meta name="web-author" content="RedTide and SFZ Format Team">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- Atom Feeds -->
+		<link href="/atom.xml" rel="alternate" title="News" type="application/atom+xml" />
+
+		<!-- Favicon Generator Icons -->
+		<link rel="apple-touch-icon" sizes="152x152" href="/assets/ico/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/ico/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/assets/ico/favicon-16x16.png">
+		<link rel="manifest" href="/assets/ico/site.webmanifest">
+		<link rel="mask-icon" href="/assets/ico/safari-pinned-tab.svg" color="#5bbad5">
+		<link rel="shortcut icon" href="/assets/ico/favicon.ico">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-config" content="/assets/ico/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+
+		<!-- Stylesheets -->
+		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
+		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
+
+		<!-- Font Awesome Icons -->
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/solid.js"       integrity="sha384-Mf3ap7OwO+bjTkzM1RsrothLh38uKXvMWJ2TQPXGHqZcqfeI/cyCV+sfV0IDnBDq" crossorigin="anonymous"></script>
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/brands.js"      integrity="sha384-b2GpqFrJizV0BUEdbrITdOA5HnxnlrErt7MlEERWd6NSJ32rHeibEvyyCuA13OAS" crossorigin="anonymous"></script>
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/fontawesome.js" integrity="sha384-EYYaHDhIRoBhd/Ir/1fPnxg9rZLk/55lKtlNT5KrIcONoCS2kjf7ZWzMoCLLACeo" crossorigin="anonymous"></script>
+
+	</head>
+
+	<body>
+
+		<button onclick="topFunction()" id="scrollButton" title="Go to top">Top</button>
+		<a href="#content" class="sr-only">Skip to content</a>
+		<div class="container">
+
+			<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#222">
+				<a class="navbar-brand" href="/">
+					<img src="/assets/img/logo.png"
+					width="120" height="30" class="d-inline-block align-top" alt=""></a>
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarContent" aria-controls="navbarContent"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarContent">
+					<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarSyntax"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Syntax</a>
+							<div class="dropdown-menu" aria-labelledby="navbarSyntax">
+		
+			
+								<a class="dropdown-item"
+									href="/headers/">Headers</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/misc/sfz1">SFZ v1 Opcodes</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/misc/sfz2">SFZ v2 Opcodes</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/misc/cakewalk">SFZ v2 Opcodes (Cakewalk)</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/extensions/aria/">ARIA Extensions</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/extensions/linuxsampler/">LinuxSampler Extensions</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/extensions/midi_ccs">Extended MIDI CCs</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/misc/categories">Types & Categories</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarSoftware"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Software</a>
+							<div class="dropdown-menu" aria-labelledby="navbarSoftware">
+		
+			
+								<a class="dropdown-item"
+									href="/software/players">Players</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/software/tools">Tools</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarTutorials"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Tutorials</a>
+							<div class="dropdown-menu" aria-labelledby="navbarTutorials">
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/basic_sfz_file">Basic / Template</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sustained_note_basics">Sustained Note Basics</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/vibrato">Vibrato</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/legato">Legato</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/drum_basics">Drum Basics</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/brush_stirs">Brush Stirs</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sfz1_modulations">SFZ 1 Modulations</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sfz2_modulations">SFZ 2 Modulations</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/lfo">Pitch LFO Examples</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/videos">Video Tutorials</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDocs"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Docs</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDocs">
+		
+			
+								<a class="dropdown-item"
+									href="/docs/website-development-reference">Website Development Reference</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/docs/adding-player-opcode-list">Add players description and opcode support pages</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+						<li class="nav-item">
+							<a class="nav-link"
+								href="/news"> News</a>
+	
+						</li>
+
+					</ul>
+				</div>
+				<form class="form-inline my-2 my-lg-0" role="search"
+					action="/search/">
+					<input class="form-control mr-sm-2" type="search" name="query"
+						placeholder="Search" aria-label="Search">
+				</form>
+			</nav>
+
+			<div class="row mt-4" id="content">
+				<div class="col-md-9">
+					<article><h1>ARIA Engine</h1><p>The ARIA Engine is an audio sampling and synthesis Engine, developed by
+<a href="http://www.plogue.com/">Plogue Art et Technologie Inc</a> in collaboration with <a href="http://www.garritan.com/">Garritan Corp</a>
+now part of <a href="https://www.makemusic.com/">MakeMusic, Inc</a>.</p>
+
+<p>It is fully compatible with <a href="http://ariaengine.com/overview/system-compatibility/">32bits and 64bits architectures on OS X, Windows
+and iOS</a>. It can be used as a standalone application or as a VST, Audio Unit,
+RTAS or AAX plugin. It is based on the <a href="http://www.cakewalk.com/DevXchange/sfz.asp">SFZ 1.0</a> / <a href="http://noisesculpture.com/cakewalk-synthesizers">SFZ 2.0</a> open file formats
+for instrument programming and the <a href="http://www.huygens-fokker.org/scala/">Scala</a> open file format
+to define scales and temperaments.</p>
+
+<p>Source: <a href="http://ariaengine.com/">ARIA Engine</a></p>
+
+<h2>Supported Operating Systems</h2>
+<ul><li>iOS</li><li>macOS X</li><li>Windows</li></ul>
+
+<h2>Supported Headers</h2>
+<table class="table table-sm table-hover table-striped table-responsive">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">Header</th>
+			<th scope="col" style="text-align:center">Version</th>
+			<th scope="col" style="text-align:center">Supported</th>
+		</tr>
+	</thead>
+	<tbody><tr>
+			<td><a href="/headers/region">region</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/headers/group">group</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/headers/control">control</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/headers/global">global</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/headers/curve">curve</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/headers/effect">effect</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/headers/master">master</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/headers/midi">midi</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr></tbody>
+</table>
+<h2>Supported Opcodes</h2>
+<table class="table table-sm table-hover table-striped table-responsive">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">Opcode</th>
+			<th scope="col" style="text-align:center">Version</th>
+			<th scope="col" style="text-align:center">Supported</th>
+		</tr>
+	</thead>
+	<tbody><tr>
+			<td><a href="/opcodes/script">script</a></td>
+			<td style="text-align:center">LinuxSampler</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/count">count</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/delay">delay</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/delay_ccN">delay_ccN</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/delay_random">delay_random</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/delay_samples">delay_samples</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/delay_samples_onccN">delay_samples_onccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/end">end</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/loop_mode">loop_mode</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/loop_start">loop_start</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/loop_end">loop_end</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/offset">offset</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/offset_ccN">offset_ccN</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/offset_random">offset_random</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/sample">sample</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/sync_beats">sync_beats</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/sync_offset">sync_offset</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/delay_beats">delay_beats</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/stop_beats">stop_beats</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/direction">direction</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/loop_count">loop_count</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/loop_crossfade">loop_crossfade</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/loop_type">loop_type</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/md5">md5</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/reverse_loccN">reverse_loccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/reverse_hiccN">reverse_hiccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/waveguide">waveguide</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/define">#define</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/default_path">default_path</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/note_offset">note_offset</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/octave_offset">octave_offset</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/label_ccN">label_ccN</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/set_ccN">set_ccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/include">#include</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/hint_">hint_*</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/set_hdccN">set_hdccN</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/sostenuto_lo">sostenuto_lo</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/sostenuto_cc">sostenuto_cc</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/sustain_lo">sustain_lo</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/sustain_cc">sustain_cc</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/sw_note_offset">sw_note_offset</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/sw_octave_offset">sw_octave_offset</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/global_label">global_label</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/master_label">master_label</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/group_label">group_label</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/region_label">region_label</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/group">group</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/off_by">off_by</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/off_mode">off_mode</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/output">output</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/polyphony">polyphony</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/note_polyphony">note_polyphony</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/note_selfmask">note_selfmask</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/rt_dead">rt_dead</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/off_curve">off_curve</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/off_shape">off_shape</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/off_time">off_time</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/polyphony_group">polyphony_group</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/key">key</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lokey">lokey</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/hikey">hikey</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lovel">lovel</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/hivel">hivel</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lochan">lochan</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/hichan">hichan</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/loccN">loccN</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/hiccN">hiccN</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lobend">lobend</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/hibend">hibend</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/sw_lokey">sw_lokey</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/sw_hikey">sw_hikey</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/sw_last">sw_last</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/sw_down">sw_down</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/sw_up">sw_up</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/sw_previous">sw_previous</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/sw_vel">sw_vel</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/sustain_sw">sustain_sw</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/sostenuto_sw">sostenuto_sw</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/loprog">loprog</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/hiprog">hiprog</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lohdccN">lohdccN</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/hihdccN">hihdccN</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/sw_default">sw_default</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/sw_label">sw_label</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/sw_lolast">sw_lolast</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/sw_hilast">sw_hilast</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/varNN_curveccX">varNN_curveccX</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/varNN_mod">varNN_mod</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/varNN_onccX">varNN_onccX</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/varNN_target">varNN_target</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lobpm">lobpm</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/hibpm">hibpm</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lochanaft">lochanaft</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/hichanaft">hichanaft</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lopolyaft">lopolyaft</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/hipolyaft">hipolyaft</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/lorand">lorand</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/hirand">hirand</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/seq_length">seq_length</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/seq_position">seq_position</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lotimer">lotimer</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/hitimer">hitimer</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/trigger">trigger</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/on_loccN">on_loccN</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/on_hiccN">on_hiccN</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/start_loccN">start_loccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/start_hiccN">start_hiccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/stop_loccN">stop_loccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/stop_hiccN">stop_hiccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pan">pan</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/position">position</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/volume">volume</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/gain_ccN">gain_ccN</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/volume_onccN">volume_onccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/volume_smoothccN">volume_smoothccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/volume_stepccN">volume_stepccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/volume_curveccN">volume_curveccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/width">width</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/width_onccN">width_onccN</a></td>
+			<td style="text-align:center">Cakewalk</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/width_smoothccN">width_smoothccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/width_stepccN">width_stepccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/width_curveccN">width_curveccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/amp_keycenter">amp_keycenter</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/amp_keytrack">amp_keytrack</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/amp_veltrack">amp_veltrack</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/amp_velcurve_N">amp_velcurve_N</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/amp_random">amp_random</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/rt_decay">rt_decay</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/xf_cccurve">xf_cccurve</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/xf_keycurve">xf_keycurve</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/xf_velcurve">xf_velcurve</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/xfin_loccN">xfin_loccN</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/xfin_hiccN">xfin_hiccN</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/xfout_loccN">xfout_loccN</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/xfout_hiccN">xfout_hiccN</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/xfin_lokey">xfin_lokey</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/xfin_hikey">xfin_hikey</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/xfout_lokey">xfout_lokey</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/xfout_hikey">xfout_hikey</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/xfin_lovel">xfin_lovel</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/xfin_hivel">xfin_hivel</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/xfout_lovel">xfout_lovel</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/xfout_hivel">xfout_hivel</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/phase">phase</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/amplitude">amplitude</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/amplitude_onccN">amplitude_onccN</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/amplitude_curveccN">amplitude_curveccN</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/amplitude_smoothccN">amplitude_smoothccN</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/global_amplitude">global_amplitude</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/master_amplitude">master_amplitude</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/group_amplitude">group_amplitude</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pan_law">pan_law</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pan_keycenter">pan_keycenter</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pan_keytrack">pan_keytrack</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pan_veltrack">pan_veltrack</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pan_onccN">pan_onccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pan_smoothccN">pan_smoothccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pan_stepccN">pan_stepccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pan_curveccN">pan_curveccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/global_volume">global_volume</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/master_volume">master_volume</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/group_volume">group_volume</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/eqN_bw">eqN_bw</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/eqN_bwccX">eqN_bwccX</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/eqN_freq">eqN_freq</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/eqN_freqccX">eqN_freqccX</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/eqN_vel2freq">eqN_vel2freq</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/eqN_gain">eqN_gain</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/eqN_gainccX">eqN_gainccX</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/eqN_vel2gain">eqN_vel2gain</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/cutoff">cutoff</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/cutoff_ccN">cutoff_ccN</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/cutoff_curveccN">cutoff_curveccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/cutoff_smoothccN">cutoff_smoothccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/cutoff_stepccN">cutoff_stepccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/cutoff_chanaft">cutoff_chanaft</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/cutoff_polyaft">cutoff_polyaft</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/fil_keytrack">fil_keytrack</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/fil_keycenter">fil_keycenter</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/fil_random">fil_random</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/fil_type">fil_type</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/fil_veltrack">fil_veltrack</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/resonance">resonance</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/resonance_onccN">resonance_onccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/resonance_curveccN">resonance_curveccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/resonance_smoothccN">resonance_smoothccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/resonance_stepccN">resonance_stepccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/cutoff2">cutoff2</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/cutoff2_onccN">cutoff2_onccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/cutoff2_curveccN">cutoff2_curveccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/cutoff2_smoothccN">cutoff2_smoothccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/cutoff2_stepccN">cutoff2_stepccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/fil2_keycenter">fil2_keycenter</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/fil2_keytrack">fil2_keytrack</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/fil2_type">fil2_type</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center"><a href="/opcodes/fil2_type">Partial</a></td>
+		</tr><tr>
+			<td><a href="/opcodes/fil2_veltrack">fil2_veltrack</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/resonance2">resonance2</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/resonance2_onccN">resonance2_onccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/resonance2_curveccN">resonance2_curveccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/resonance2_smoothccN">resonance2_smoothccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/resonance2_stepccN">resonance2_stepccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/bend_up">bend_up</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/bend_down">bend_down</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/bend_smooth">bend_smooth</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/bend_step">bend_step</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitch">pitch</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitch_onccN">pitch_onccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitch_curveccN">pitch_curveccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitch_stepccN">pitch_stepccN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitch_smoothccN">pitch_smoothccN</a></td>
+			<td style="text-align:center">Cakewalk</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitch_keycenter">pitch_keycenter</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitch_keytrack">pitch_keytrack</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitch_random">pitch_random</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitch_veltrack">pitch_veltrack</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/transpose">transpose</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/tune">tune</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/tune_onccN">tune_onccN</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/tune_curveccN">tune_curveccN</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/tune_smoothccN">tune_smoothccN</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/tune_stepccN">tune_stepccN</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/bend_stepup">bend_stepup</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/bend_stepdown">bend_stepdown</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_attack">ampeg_attack</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_attackccN">ampeg_attackccN</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_vel2attack">ampeg_vel2attack</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_decay">ampeg_decay</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_decayccN">ampeg_decayccN</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_vel2decay">ampeg_vel2decay</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_delay">ampeg_delay</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_delayccN">ampeg_delayccN</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_vel2delay">ampeg_vel2delay</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_hold">ampeg_hold</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_holdccN">ampeg_holdccN</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_vel2hold">ampeg_vel2hold</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_release">ampeg_release</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_releaseccN">ampeg_releaseccN</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_vel2release">ampeg_vel2release</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_sustain">ampeg_sustain</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_sustainccN">ampeg_sustainccN</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_vel2sustain">ampeg_vel2sustain</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_start">ampeg_start</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_startccN">ampeg_startccN</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_attack_shape">ampeg_attack_shape</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_decay_shape">ampeg_decay_shape</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_decay_zero">ampeg_decay_zero</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_release_shape">ampeg_release_shape</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_release_zero">ampeg_release_zero</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/fileg_attack_shape">fileg_attack_shape</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/fileg_decay_shape">fileg_decay_shape</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/fileg_decay_zero">fileg_decay_zero</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/fileg_release_shape">fileg_release_shape</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/fileg_release_zero">fileg_release_zero</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitcheg_attack_shape">pitcheg_attack_shape</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitcheg_decay_shape">pitcheg_decay_shape</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitcheg_decay_zero">pitcheg_decay_zero</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitcheg_release_shape">pitcheg_release_shape</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitcheg_release_zero">pitcheg_release_zero</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/fileg_attack">fileg_attack</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/fileg_vel2attack">fileg_vel2attack</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/fileg_decay">fileg_decay</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/fileg_vel2decay">fileg_vel2decay</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/fileg_delay">fileg_delay</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/fileg_vel2delay">fileg_vel2delay</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/fileg_hold">fileg_hold</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/fileg_vel2hold">fileg_vel2hold</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/fileg_release">fileg_release</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/fileg_vel2release">fileg_vel2release</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/fileg_sustain">fileg_sustain</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/fileg_vel2sustain">fileg_vel2sustain</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/fileg_start">fileg_start</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitcheg_attack">pitcheg_attack</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitcheg_vel2attack">pitcheg_vel2attack</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitcheg_decay">pitcheg_decay</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitcheg_vel2decay">pitcheg_vel2decay</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitcheg_delay">pitcheg_delay</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitcheg_vel2delay">pitcheg_vel2delay</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitcheg_hold">pitcheg_hold</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitcheg_vel2hold">pitcheg_vel2hold</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitcheg_release">pitcheg_release</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitcheg_vel2release">pitcheg_vel2release</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitcheg_sustain">pitcheg_sustain</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitcheg_vel2sustain">pitcheg_vel2sustain</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitcheg_start">pitcheg_start</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_points">egN_points</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_timeX">egN_timeX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_levelX">egN_levelX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_shapeX">egN_shapeX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_curveX">egN_curveX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_sustain">egN_sustain</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_loop">egN_loop</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_loop_count">egN_loop_count</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_volume">egN_volume</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_amplitude">egN_amplitude</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_pan">egN_pan</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_width">egN_width</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_width_onccX">egN_width_onccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_pan_curve">egN_pan_curve</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_freq_lfoX">egN_freq_lfoX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_depth_lfoX">egN_depth_lfoX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_depthadd_lfoX">egN_depthadd_lfoX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_pitch">egN_pitch</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_cutoff">egN_cutoff</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_cutoff2">egN_cutoff2</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_cutoff2_onccX">egN_cutoff2_onccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_resonance">egN_resonance</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_resonance2">egN_resonance2</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_resonance2_onccX">egN_resonance2_onccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_eqXfreq">egN_eqXfreq</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_eqXbw">egN_eqXbw</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_eqXgain">egN_eqXgain</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_decim">egN_decim</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_decim_onccX">egN_decim_onccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_bitred">egN_bitred</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_bitred_onccX">egN_bitred_onccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_rectify">egN_rectify</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_rectify_onccX">egN_rectify_onccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_ringmod">egN_ringmod</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_ringmod_onccX">egN_ringmod_onccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_noiselevel">egN_noiselevel</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_noiselevel_onccX">egN_noiselevel_onccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_noisestep">egN_noisestep</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_noisestep_onccX">egN_noisestep_onccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_noisetone">egN_noisetone</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_noisetone_onccX">egN_noisetone_onccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_driveshape">egN_driveshape</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_driveshape_onccX">egN_driveshape_onccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/amplfo_delay">amplfo_delay</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/amplfo_depth">amplfo_depth</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/amplfo_depthccN">amplfo_depthccN</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/amplfo_depthchanaft">amplfo_depthchanaft</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/amplfo_depthpolyaft">amplfo_depthpolyaft</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/amplfo_fade">amplfo_fade</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/amplfo_freq">amplfo_freq</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/amplfo_freqccN">amplfo_freqccN</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/amplfo_freqchanaft">amplfo_freqchanaft</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/amplfo_freqpolyaft">amplfo_freqpolyaft</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/fillfo_delay">fillfo_delay</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/fillfo_depth">fillfo_depth</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/fillfo_depthccN">fillfo_depthccN</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/fillfo_depthchanaft">fillfo_depthchanaft</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/fillfo_depthpolyaft">fillfo_depthpolyaft</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/fillfo_fade">fillfo_fade</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/fillfo_freq">fillfo_freq</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/fillfo_freqccN">fillfo_freqccN</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/fillfo_freqchanaft">fillfo_freqchanaft</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/fillfo_freqpolyaft">fillfo_freqpolyaft</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitchlfo_delay">pitchlfo_delay</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitchlfo_depth">pitchlfo_depth</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitchlfo_depthccN">pitchlfo_depthccN</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitchlfo_depthchanaft">pitchlfo_depthchanaft</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitchlfo_depthpolyaft">pitchlfo_depthpolyaft</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitchlfo_fade">pitchlfo_fade</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitchlfo_freq">pitchlfo_freq</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitchlfo_freqccN">pitchlfo_freqccN</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitchlfo_freqchanaft">pitchlfo_freqchanaft</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitchlfo_freqpolyaft">pitchlfo_freqpolyaft</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_freq">lfoN_freq</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_delay">lfoN_delay</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_fade">lfoN_fade</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_phase">lfoN_phase</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_count">lfoN_count</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_wave">lfoN_wave</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_wave_onccX">lfoN_wave_onccX</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_steps">lfoN_steps</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_stepX">lfoN_stepX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_smooth">lfoN_smooth</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_smooth_onccX">lfoN_smooth_onccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_volume">lfoN_volume</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_amplitude">lfoN_amplitude</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_amplitude_onccX">lfoN_amplitude_onccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_amplitude_smoothccX">lfoN_amplitude_smoothccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_amplitude_stepccX">lfoN_amplitude_stepccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_pan">lfoN_pan</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_width">lfoN_width</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_width_onccX">lfoN_width_onccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_width_smoothccX">lfoN_width_smoothccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_width_stepccX">lfoN_width_stepccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_freq_lfoX">lfoN_freq_lfoX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_depth_lfoX">lfoN_depth_lfoX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_depthadd_lfoX">lfoN_depthadd_lfoX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_pitch">lfoN_pitch</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_cutoff">lfoN_cutoff</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_cutoff2">lfoN_cutoff2</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_cutoff2_smoothccX">lfoN_cutoff2_smoothccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_cutoff2_stepccX">lfoN_cutoff2_stepccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_resonance">lfoN_resonance</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_resonance2">lfoN_resonance2</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_resonance2_smoothccX">lfoN_resonance2_smoothccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_resonance2_stepccX">lfoN_resonance2_stepccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_eqXfreq">lfoN_eqXfreq</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_eqXbw">lfoN_eqXbw</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_eqXgain">lfoN_eqXgain</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_decim">lfoN_decim</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_decim_smoothccX">lfoN_decim_smoothccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_decim_stepccX">lfoN_decim_stepccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_bitred">lfoN_bitred</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_bitred_smoothccX">lfoN_bitred_smoothccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_bitred_stepccX">lfoN_bitred_stepccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_noiselevel">lfoN_noiselevel</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_noiselevel_smoothccX">lfoN_noiselevel_smoothccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_noiselevel_stepccX">lfoN_noiselevel_stepccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_noisestep">lfoN_noisestep</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_noisestep_smoothccX">lfoN_noisestep_smoothccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_noisestep_stepccX">lfoN_noisestep_stepccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_noisetone">lfoN_noisetone</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_noisetone_smoothccX">lfoN_noisetone_smoothccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_noisetone_stepccX">lfoN_noisetone_stepccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_drive">lfoN_drive</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_drive_smoothccX">lfoN_drive_smoothccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_drive_stepccX">lfoN_drive_stepccX</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_offsetX">lfoN_offsetX</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_ratio">lfoN_ratio</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_scale">lfoN_scale</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_wave2">lfoN_wave2</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/curve_index">curve_index</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/vN">vN</a></td>
+			<td style="text-align:center">SFZ v2</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/effect1">effect1</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/effect2">effect2</a></td>
+			<td style="text-align:center">SFZ v1</td>
+			<td style="text-align:center">X</td>
+		</tr><tr>
+			<td><a href="/opcodes/param_offset">param_offset</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr><tr>
+			<td><a href="/opcodes/vendor_specific">vendor_specific</a></td>
+			<td style="text-align:center">ARIA</td>
+			<td style="text-align:center">✓</td>
+		</tr></tbody>
+</table>
+
+
+					</article>
+				</div>
+				<div class="col-md-3">
+					<aside>
+
+						<div class="card border-dark mb-3">
+							<div class="card-header text-light"
+								style="background-color:#222">
+								<i class="fas fa-eye"
+									aria-hidden="true"></i>
+								Follow us
+							</div>
+							<div class="card-body" style="padding: 0.5rem">
+								<ul class="nav nav-pills flex-column">
+	<li class="nav-item">
+										<a class="nav-link" href="https://github.com/sfzformat/"
+											title="GitHub Organization" style="padding: 0.35rem 0.25rem">
+										<i class="fab fa-github fa-fw"
+										aria-hidden="true"></i>
+										GitHub Organization</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://www.plogue.com/plgfrms/viewforum.php?f=14"
+											title="Plogue Forum" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-users fa-fw"
+										aria-hidden="true"></i>
+										Plogue Forum</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://discord.gg/t7nrZ6d"
+											title="Discord Chat" style="padding: 0.35rem 0.25rem">
+										<i class="fab fa-discord fa-fw"
+										aria-hidden="true"></i>
+										Discord Chat</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://kiwiirc.com/nextclient/#irc://irc.freenode.net:+6697/#sfzformat"
+											title="Internet Relay Chat" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-hashtag fa-fw"
+										aria-hidden="true"></i>
+										IRC</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="/atom.xml"
+											title="News Atom Feed" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-rss fa-fw"
+										aria-hidden="true"></i>
+										News Atom Feed</a>
+									</li>
+	
+								</ul>
+							</div>
+						</div>
+
+						<div class="card border-dark mb-3">
+							<div class="card-header text-light"
+								style="background-color:#222">
+								<i class="fas fa-link"
+									aria-hidden="true"></i>
+								Quick links
+							</div>
+							<div class="card-body" style="padding: 0.5rem">
+								<ul class="nav nav-pills flex-column">
+	<li class="nav-item">
+										<a class="nav-link" href="/legacy"
+											title="Old rgc:audio SFZ page" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-book fa-fw"
+										aria-hidden="true"></i>
+										Old rgc:audio SFZ page</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="http://www.drealm.info/sfz/"
+											title="Peter L. Jones' SFZ page" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-book fa-fw"
+										aria-hidden="true"></i>
+										Peter L. Jones' SFZ page</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://github.com/sfzinstruments/"
+											title="Free SFZ Instruments" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-download fa-fw"
+										aria-hidden="true"></i>
+										Free SFZ Instruments</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://www.kvraudio.com/forum/viewtopic.php?f=42&t=508861"
+											title="KVR Forum SFZ post" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-users fa-fw"
+										aria-hidden="true"></i>
+										KVR Forum SFZ post</a>
+									</li>
+	
+								</ul>
+							</div>
+						</div>
+
+
+					</aside>
+				</div>
+			</div>
+			<hr>
+			<footer><p>
+					This site is open source.
+					<a href="https://github.com/sfzformat/sfzformat.github.io/edit/source/software/players/aria.md">
+					Improve this page</a>
+				</p>
+			</footer>
+
+		</div>
+		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
+		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
+		<script>
+			$(document).ready(function(){
+			$('pre').addClass('prettyprint lang-sfz');
+			prettyPrint();
+			});
+		</script>
+
+
+	</body>
+</html>

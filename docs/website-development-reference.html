@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>Website Development Reference - SFZ Format</title>
+
+		<meta name="author" content="Karoryfer Samples and SFZ Format Team">
+		<meta name="web-author" content="RedTide and SFZ Format Team">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- Atom Feeds -->
+		<link href="/atom.xml" rel="alternate" title="News" type="application/atom+xml" />
+
+		<!-- Favicon Generator Icons -->
+		<link rel="apple-touch-icon" sizes="152x152" href="/assets/ico/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/ico/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/assets/ico/favicon-16x16.png">
+		<link rel="manifest" href="/assets/ico/site.webmanifest">
+		<link rel="mask-icon" href="/assets/ico/safari-pinned-tab.svg" color="#5bbad5">
+		<link rel="shortcut icon" href="/assets/ico/favicon.ico">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-config" content="/assets/ico/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+
+		<!-- Stylesheets -->
+		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
+		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
+
+		<!-- Font Awesome Icons -->
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/solid.js"       integrity="sha384-Mf3ap7OwO+bjTkzM1RsrothLh38uKXvMWJ2TQPXGHqZcqfeI/cyCV+sfV0IDnBDq" crossorigin="anonymous"></script>
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/brands.js"      integrity="sha384-b2GpqFrJizV0BUEdbrITdOA5HnxnlrErt7MlEERWd6NSJ32rHeibEvyyCuA13OAS" crossorigin="anonymous"></script>
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/fontawesome.js" integrity="sha384-EYYaHDhIRoBhd/Ir/1fPnxg9rZLk/55lKtlNT5KrIcONoCS2kjf7ZWzMoCLLACeo" crossorigin="anonymous"></script>
+
+	</head>
+
+	<body>
+
+		<button onclick="topFunction()" id="scrollButton" title="Go to top">Top</button>
+		<a href="#content" class="sr-only">Skip to content</a>
+		<div class="container">
+
+			<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#222">
+				<a class="navbar-brand" href="/">
+					<img src="/assets/img/logo.png"
+					width="120" height="30" class="d-inline-block align-top" alt=""></a>
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarContent" aria-controls="navbarContent"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarContent">
+					<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarSyntax"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Syntax</a>
+							<div class="dropdown-menu" aria-labelledby="navbarSyntax">
+		
+			
+								<a class="dropdown-item"
+									href="/headers/">Headers</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/misc/sfz1">SFZ v1 Opcodes</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/misc/sfz2">SFZ v2 Opcodes</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/misc/cakewalk">SFZ v2 Opcodes (Cakewalk)</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/extensions/aria/">ARIA Extensions</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/extensions/linuxsampler/">LinuxSampler Extensions</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/extensions/midi_ccs">Extended MIDI CCs</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/misc/categories">Types & Categories</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarSoftware"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Software</a>
+							<div class="dropdown-menu" aria-labelledby="navbarSoftware">
+		
+			
+								<a class="dropdown-item"
+									href="/software/players">Players</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/software/tools">Tools</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarTutorials"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Tutorials</a>
+							<div class="dropdown-menu" aria-labelledby="navbarTutorials">
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/basic_sfz_file">Basic / Template</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sustained_note_basics">Sustained Note Basics</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/vibrato">Vibrato</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/legato">Legato</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/drum_basics">Drum Basics</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/brush_stirs">Brush Stirs</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sfz1_modulations">SFZ 1 Modulations</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sfz2_modulations">SFZ 2 Modulations</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/lfo">Pitch LFO Examples</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/videos">Video Tutorials</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDocs"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Docs</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDocs">
+		
+			
+								<a class="dropdown-item"
+									href="/docs/website-development-reference">Website Development Reference</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/docs/adding-player-opcode-list">Add players description and opcode support pages</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+						<li class="nav-item">
+							<a class="nav-link"
+								href="/news"> News</a>
+	
+						</li>
+
+					</ul>
+				</div>
+				<form class="form-inline my-2 my-lg-0" role="search"
+					action="/search/">
+					<input class="form-control mr-sm-2" type="search" name="query"
+						placeholder="Search" aria-label="Search">
+				</form>
+			</nav>
+
+			<div class="row mt-4" id="content">
+				<div class="col-md-9">
+					<article><h1>Website Development Reference</h1><h2 id="introduction">Introduction</h2>
+
+<p>This page has the purpose to document the SFZ Format project website and give
+references and rules for maintainance.</p>
+
+<h2 id="github-and-travis-ci">GitHub and Travis-CI</h2>
+
+<p>The webpage is hosted on <a href="https://github.com/sfzformat/sfzformat.github.io">GitHub</a> using <a href="https://git-scm.com/">Git SCM</a>
+as content management, using 2 git repositories: source and master.
+The source repository is used for the website source files written in <a href="https://daringfireball.net/projects/markdown/syntax">Markdown</a>
+format and <a href="https://shopify.github.io/liquid/">Liquid</a> language, which are used by <a href="https://jekyllrb.com/">Jekyll</a>,
+a static pages website generator created and used by GitHub for hosting
+project websites.
+The master repository is used to store the generated files that are built
+externally by Travis Continuous Integration service.
+<a href="https://travis-ci.com">Travis-CI</a> was choosed instead GitHub Pages to enable the use of Jekyll custom
+plugins required for our purposes, following their <a href="https://docs.travis-ci.com/user/deployment/pages/">GitHub Pages Deployment</a>
+documentation.</p>
+
+<h2 id="rules">Rules</h2>
+
+<ul>
+  <li>
+    <p>Start any .md file with a 2 triple-dashed lines <a href="https://jekyllrb.com/docs/front-matter/">front matter</a>,
+otherwise Jekyll will copy the original md file into the resulting <code class="highlighter-rouge">_site</code>
+directory.</p>
+
+    <p>Opcode files should include:</p>
+    <ul>
+      <li>a <code class="highlighter-rouge">layout: sfz/opcode</code> variable to specify the
+required layout to build the resulting html page</li>
+      <li>the page language code if it’s not English</li>
+      <li>optionally, the title of the page if different than the page name
+(see the example below).</li>
+    </ul>
+  </li>
+  <li>
+    <p>Each opcode file must have also an entry in the <a href="#syntaxyml">syntax.yml</a> db file.</p>
+  </li>
+  <li>
+    <p>Using block code three back ticks even with a single line, inline code is used
+for opcode keywords highlights.</p>
+  </li>
+  <li>
+    <p>Using spaces instead of tabs for indentation in pages, mostly on <code class="highlighter-rouge">_config.yml</code>
+to avoid issues / unwanted results.</p>
+  </li>
+  <li>
+    <p>Using 80 characters per line limit for a better reading.</p>
+  </li>
+  <li>
+    <p>Using a naming convention for numbered opcodes starting with N following with
+X Y Z, e.g.: <code class="highlighter-rouge">egN_timeX_onccY</code></p>
+  </li>
+  <li>
+    <p>Don’t use ‘&lt;’ and ‘&gt;’ in md files to avoid the parser to generate wrong html
+code, use ‘‹’ and ‘›’ instead.</p>
+  </li>
+</ul>
+
+<h2 id="content">Content</h2>
+
+<h3 id="opcode-file-example">Opcode File Example</h3>
+
+<p>In case the opcode doesn’t have any modulation and it has some associated
+opcode like on_loccN / on_hiccN, then using <code class="highlighter-rouge">title</code> is the right choice.
+Otherwise use <code class="highlighter-rouge">opcode_name</code>, so a modulation documentation file (a symlink to the
+opcode it modulates in source code) will use the correct references.</p>
+
+<?prettify?>
+<pre class="prettyprint">
+---
+layout: "sfz/opcode"
+lang: "en"
+title: "lovel / hivel"
+---
+(Here the auto-generated brief text description from syntax.yml db...)
+
+This is just an example for an opcode extended description to be written in some
+/opcodes/lovel.md markdown file.
+This text is readable on any editor, with low or high resolutions.
+
+## Examples
+
+```
+lovel=value1
+hivel=value2
+```
+
+(Here the auto-generated description table from syntax.yml db...)
+</pre>
+
+<?prettify?>
+<pre class="prettyprint">
+---
+layout: "sfz/opcode"
+opcode_name: "volume"
+---
+...
+
+## Examples
+
+```
+...
+```
+
+(auto-generated table -&gt;) Modulations: volume_onccN ...
+
+</pre>
+
+<h2 id="yaml-configuration-files">YAML Configuration Files</h2>
+
+<p>The main <a href="https://jekyllrb.com/docs/configuration/">_config.yml</a> configuration file is placed in the root of the source repo.
+It is used by Jekyll to store its configuration options, but it can also be used
+for user custom options as well.
+Other configuration files are placed in the <code class="highlighter-rouge">_data</code> directory, used for other
+website contexts, like translation strings, navigation menu, aside blocks,
+and other SFZ related data files.</p>
+
+<h3 id="translation-files">Translation files</h3>
+
+<p>The <code class="highlighter-rouge">/_data/locale/</code> directory contains all files used for website
+language translation subdivided by language codes as subdirectories.
+Currently each language translation subdirectory contains 2 files:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">layout.yml</code>: contains both the navigation menu links and the aside card blocks
+  strings</li>
+  <li><code class="highlighter-rouge">translation.yml</code>: contains all the language related translation strings used
+  by default in the website pages.</li>
+</ul>
+
+<h4 id="layoutyml-navigation-and-cards-section"><code class="highlighter-rouge">layout.yml</code> navigation and cards section</h4>
+
+<p>The <code class="highlighter-rouge">navigation</code> section is used by the <code class="highlighter-rouge">_includes/navigation.html</code> layout page
+to build the navigation menu. It recognizes the following variable structure:</p>
+
+<ul>
+  <li>title: The menu title</li>
+  <li>type:  The menu type, can be normal for simple links or dropdown for submenus,
+       identified by an arrow down icon.</li>
+  <li>url:   Normal links only, the URL of the link.</li>
+  <li>pages: Submenus container. An empty item, using just a hyphen,
+       creates a menu separator.</li>
+</ul>
+
+<p>The <code class="highlighter-rouge">cards</code> section is used by the <code class="highlighter-rouge">_includes/cards.html</code> layout page to build
+the aside <a href="https://getbootstrap.com/docs/4.0/components/card/">card</a> blocks on the right side of most of the website pages to place
+various internal and external links.
+It’s very similar to the navigation one with few differences:</p>
+
+<ul>
+  <li>title: The card header title</li>
+  <li>icon_type: A Font Awesome icon type name, e.g. “github”</li>
+  <li>icon_category: The category of the FA icon
+    <ul>
+      <li>fas: solid icon</li>
+      <li>fab: brand icon</li>
+    </ul>
+  </li>
+  <li>links: The contained card links.</li>
+</ul>
+
+<h3 id="sfz-related-yaml-files">SFZ related YAML files</h3>
+
+<p>The <code class="highlighter-rouge">/_data/sfz/</code> directory contains all YAML files used for SFZ related data.</p>
+
+<h4 id="syntaxyml"><code class="highlighter-rouge">syntax.yml</code></h4>
+
+<p>The <code class="highlighter-rouge">headers</code> section is used by the <code class="highlighter-rouge">_includes/sfz/headers-table-generator.html</code>
+to build <code class="highlighter-rouge">/headers/index.md</code> description tables:</p>
+
+<ul>
+  <li>name: The header name</li>
+  <li>version: The SFZ version (see below)</li>
+</ul>
+
+<p>The <code class="highlighter-rouge">opcodes</code> section is used by different files as database information for all
+known opcodes, including extension ones.</p>
+
+<p>The data is accessible from the <code class="highlighter-rouge">site.data.sfz.syntax.opcodes</code> and
+ <code class="highlighter-rouge">site.data.sfz.syntax.headers</code> Liquid variables.</p>
+
+<p>There are various possible variables, which most are not mandatory, so if some
+opcode doesn’t includes a feature, it can be omitted, resulting in Liquid code as
+<code class="highlighter-rouge">variable-name == nil</code>.</p>
+
+<p>Currently possible values are:</p>
+
+<ul>
+  <li>
+    <p>name: the opcode name.</p>
+  </li>
+  <li>
+    <p>short_description: a brief opcode description used to describe all opcodes
+included in the related SFZ version/extension page.</p>
+  </li>
+  <li>version: SFZ version or extension, one of:
+    <ul>
+      <li>SFZ v1</li>
+      <li>SFZ v2</li>
+      <li>ARIA</li>
+      <li>Cakewalk</li>
+    </ul>
+  </li>
+  <li>
+    <p>alias: if the opcode has some alias in other specification version.</p>
+  </li>
+  <li>value:
+    <ul>
+      <li>type_name: Value type (string, integer, float etc.), <code class="highlighter-rouge">mandatory</code> for opcodes.</li>
+      <li>default:   An optional default value.</li>
+      <li>min:       An optional range minimum value.</li>
+      <li>max:       An optional range maximum value.</li>
+      <li>unit:      Value unit (seconds, decibels, cents etc.).</li>
+    </ul>
+  </li>
+  <li>modulation:
+    <ul>
+      <li>
+        <p>envelope: true (bool, without double quotes) if unspecified but present,
+          otherwise the name of modulation (string).</p>
+      </li>
+      <li>
+        <p>lfo: same as for envelope.</p>
+      </li>
+      <li>
+        <p>midi_cc:</p>
+        <ul>
+          <li>name: the ccN related opcode event name.</li>
+          <li>version: the opcode modulation SFZ version</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p>For more details, check the file for additional variable options.</p>
+
+
+					</article>
+				</div>
+				<div class="col-md-3">
+					<aside>
+
+						<div class="card border-dark mb-3">
+							<div class="card-header text-light"
+								style="background-color:#222">
+								<i class="fas fa-eye"
+									aria-hidden="true"></i>
+								Follow us
+							</div>
+							<div class="card-body" style="padding: 0.5rem">
+								<ul class="nav nav-pills flex-column">
+	<li class="nav-item">
+										<a class="nav-link" href="https://github.com/sfzformat/"
+											title="GitHub Organization" style="padding: 0.35rem 0.25rem">
+										<i class="fab fa-github fa-fw"
+										aria-hidden="true"></i>
+										GitHub Organization</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://www.plogue.com/plgfrms/viewforum.php?f=14"
+											title="Plogue Forum" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-users fa-fw"
+										aria-hidden="true"></i>
+										Plogue Forum</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://discord.gg/t7nrZ6d"
+											title="Discord Chat" style="padding: 0.35rem 0.25rem">
+										<i class="fab fa-discord fa-fw"
+										aria-hidden="true"></i>
+										Discord Chat</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://kiwiirc.com/nextclient/#irc://irc.freenode.net:+6697/#sfzformat"
+											title="Internet Relay Chat" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-hashtag fa-fw"
+										aria-hidden="true"></i>
+										IRC</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="/atom.xml"
+											title="News Atom Feed" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-rss fa-fw"
+										aria-hidden="true"></i>
+										News Atom Feed</a>
+									</li>
+	
+								</ul>
+							</div>
+						</div>
+
+						<div class="card border-dark mb-3">
+							<div class="card-header text-light"
+								style="background-color:#222">
+								<i class="fas fa-link"
+									aria-hidden="true"></i>
+								Quick links
+							</div>
+							<div class="card-body" style="padding: 0.5rem">
+								<ul class="nav nav-pills flex-column">
+	<li class="nav-item">
+										<a class="nav-link" href="/legacy"
+											title="Old rgc:audio SFZ page" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-book fa-fw"
+										aria-hidden="true"></i>
+										Old rgc:audio SFZ page</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="http://www.drealm.info/sfz/"
+											title="Peter L. Jones' SFZ page" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-book fa-fw"
+										aria-hidden="true"></i>
+										Peter L. Jones' SFZ page</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://github.com/sfzinstruments/"
+											title="Free SFZ Instruments" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-download fa-fw"
+										aria-hidden="true"></i>
+										Free SFZ Instruments</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://www.kvraudio.com/forum/viewtopic.php?f=42&t=508861"
+											title="KVR Forum SFZ post" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-users fa-fw"
+										aria-hidden="true"></i>
+										KVR Forum SFZ post</a>
+									</li>
+	
+								</ul>
+							</div>
+						</div>
+
+
+					</aside>
+				</div>
+			</div>
+			<hr>
+			<footer><p>
+					This site is open source.
+					<a href="https://github.com/sfzformat/sfzformat.github.io/edit/source/docs/website-development-reference.md">
+					Improve this page</a>
+				</p>
+			</footer>
+
+		</div>
+		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
+		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
+		<script>
+			$(document).ready(function(){
+			$('pre').addClass('prettyprint lang-sfz');
+			prettyPrint();
+			});
+		</script>
+
+
+	</body>
+</html>

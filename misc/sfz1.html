@@ -1,0 +1,1659 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>SFZ v1 Opcodes - SFZ Format</title>
+
+		<meta name="author" content="Karoryfer Samples and SFZ Format Team">
+		<meta name="web-author" content="RedTide and SFZ Format Team">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- Atom Feeds -->
+		<link href="/atom.xml" rel="alternate" title="News" type="application/atom+xml" />
+
+		<!-- Favicon Generator Icons -->
+		<link rel="apple-touch-icon" sizes="152x152" href="/assets/ico/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/ico/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/assets/ico/favicon-16x16.png">
+		<link rel="manifest" href="/assets/ico/site.webmanifest">
+		<link rel="mask-icon" href="/assets/ico/safari-pinned-tab.svg" color="#5bbad5">
+		<link rel="shortcut icon" href="/assets/ico/favicon.ico">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-config" content="/assets/ico/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+
+		<!-- Stylesheets -->
+		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
+		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
+
+		<!-- Font Awesome Icons -->
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/solid.js"       integrity="sha384-Mf3ap7OwO+bjTkzM1RsrothLh38uKXvMWJ2TQPXGHqZcqfeI/cyCV+sfV0IDnBDq" crossorigin="anonymous"></script>
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/brands.js"      integrity="sha384-b2GpqFrJizV0BUEdbrITdOA5HnxnlrErt7MlEERWd6NSJ32rHeibEvyyCuA13OAS" crossorigin="anonymous"></script>
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/fontawesome.js" integrity="sha384-EYYaHDhIRoBhd/Ir/1fPnxg9rZLk/55lKtlNT5KrIcONoCS2kjf7ZWzMoCLLACeo" crossorigin="anonymous"></script>
+
+	</head>
+
+	<body>
+
+		<button onclick="topFunction()" id="scrollButton" title="Go to top">Top</button>
+		<a href="#content" class="sr-only">Skip to content</a>
+		<div class="container">
+
+			<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#222">
+				<a class="navbar-brand" href="/">
+					<img src="/assets/img/logo.png"
+					width="120" height="30" class="d-inline-block align-top" alt=""></a>
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarContent" aria-controls="navbarContent"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarContent">
+					<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarSyntax"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Syntax</a>
+							<div class="dropdown-menu" aria-labelledby="navbarSyntax">
+		
+			
+								<a class="dropdown-item"
+									href="/headers/">Headers</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/misc/sfz1">SFZ v1 Opcodes</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/misc/sfz2">SFZ v2 Opcodes</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/misc/cakewalk">SFZ v2 Opcodes (Cakewalk)</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/extensions/aria/">ARIA Extensions</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/extensions/linuxsampler/">LinuxSampler Extensions</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/extensions/midi_ccs">Extended MIDI CCs</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/misc/categories">Types & Categories</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarSoftware"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Software</a>
+							<div class="dropdown-menu" aria-labelledby="navbarSoftware">
+		
+			
+								<a class="dropdown-item"
+									href="/software/players">Players</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/software/tools">Tools</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarTutorials"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Tutorials</a>
+							<div class="dropdown-menu" aria-labelledby="navbarTutorials">
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/basic_sfz_file">Basic / Template</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sustained_note_basics">Sustained Note Basics</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/vibrato">Vibrato</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/legato">Legato</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/drum_basics">Drum Basics</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/brush_stirs">Brush Stirs</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sfz1_modulations">SFZ 1 Modulations</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sfz2_modulations">SFZ 2 Modulations</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/lfo">Pitch LFO Examples</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/videos">Video Tutorials</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDocs"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Docs</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDocs">
+		
+			
+								<a class="dropdown-item"
+									href="/docs/website-development-reference">Website Development Reference</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/docs/adding-player-opcode-list">Add players description and opcode support pages</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+						<li class="nav-item">
+							<a class="nav-link"
+								href="/news"> News</a>
+	
+						</li>
+
+					</ul>
+				</div>
+				<form class="form-inline my-2 my-lg-0" role="search"
+					action="/search/">
+					<input class="form-control mr-sm-2" type="search" name="query"
+						placeholder="Search" aria-label="Search">
+				</form>
+			</nav>
+
+			<div class="row mt-4" id="content">
+				<div class="col-md-9">
+					<article><h1>SFZ v1 Opcodes</h1><p>Note that modulations such as (on)ccN, and vel2* opcodes are included in the
+pages describing the parameters they modulate.</p>
+<h2><a href="/misc/categories#sound-source">Sound Source</a>: Sample Playback</h2>
+<table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">Opcode</th>
+			<th scope="col">Description</th>
+			<th scope="col">Type</th>
+			<th scope="col">Default</th>
+			<th scope="col">Range</th>
+		</tr>
+	</thead>
+	<tbody><tr>
+			<td><a href="/opcodes/count">count</a></td>
+			<td>The number of times the sample will be played.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 4294967296 </td>
+		</tr><tr>
+			<td><a href="/opcodes/delay">delay</a></td>
+			<td>Region delay time.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/delay_ccN">delay_ccN</a></td>
+			<td>Region delay time after MIDI continuous controller N messages are received. If the region receives a note-off message before delay time, the region won't play.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/delay_random">delay_random</a></td>
+			<td>Region random delay time.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/end">end</a></td>
+			<td>The endpoint of the sample.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 4294967296 sample units</td>
+		</tr><tr>
+			<td><a href="/opcodes/loop_mode">loop_mode</a></td>
+			<td>Allows playing samples with loops defined in the unlooped mode.</td>
+			<td>string</td>
+			<td><b>no_loop</b> for samples without a loop defined, <br /><b>loop_continuous</b> for samples with defined loop(s).</td>
+			<td>no_loop, one_shot, loop_continuous, loop_sustain</td>
+		</tr><tr>
+			<td><a href="/opcodes/loop_start">loop_start</a></td>
+			<td>The loop start point, in samples.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 4294967296 </td>
+		</tr><tr>
+			<td><a href="/opcodes/loop_end">loop_end</a></td>
+			<td>The loop end point, in samples.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 4294967296 </td>
+		</tr><tr>
+			<td><a href="/opcodes/offset">offset</a></td>
+			<td>The offset used to play the sample.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 4294967296 sample units</td>
+		</tr><tr>
+			<td><a href="/opcodes/offset_ccN">offset_ccN</a></td>
+			<td>The offset used to play the sample according to last position of MIDI continuous controller N.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 4294967296 sample units</td>
+		</tr><tr>
+			<td><a href="/opcodes/offset_random">offset_random</a></td>
+			<td>Random offset added to the region offset.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 4294967296 sample units</td>
+		</tr><tr>
+			<td><a href="/opcodes/sample">sample</a></td>
+			<td>Defines which sample file the region will play.</td>
+			<td>string</td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/sync_beats">sync_beats</a></td>
+			<td>Region playing synchronization to host position.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 32 beats</td>
+		</tr><tr>
+			<td><a href="/opcodes/sync_offset">sync_offset</a></td>
+			<td>Region playing synchronization to host position offset.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 32 beats</td>
+		</tr></tbody>
+</table>
+<h2><a href="/misc/categories#instrument-settings">Instrument Settings</a>: Voice Lifecycle</h2>
+<table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">Opcode</th>
+			<th scope="col">Description</th>
+			<th scope="col">Type</th>
+			<th scope="col">Default</th>
+			<th scope="col">Range</th>
+		</tr>
+	</thead>
+	<tbody><tr>
+			<td><a href="/opcodes/group">group</a></td>
+			<td>Exclusive group number for this region.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 4294967296 </td>
+		</tr><tr>
+			<td><a href="/opcodes/off_by">off_by</a></td>
+			<td>Region off group.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 4294967296 </td>
+		</tr><tr>
+			<td><a href="/opcodes/off_mode">off_mode</a></td>
+			<td>Region off mode.</td>
+			<td>string</td>
+			<td>fast</td>
+			<td>fast, normal, time</td>
+		</tr><tr>
+			<td><a href="/opcodes/output">output</a></td>
+			<td>The stereo output number for this region.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 1024 </td>
+		</tr></tbody>
+</table>
+<h2><a href="/misc/categories#region-logic">Region Logic</a>: Key Mapping</h2>
+<table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">Opcode</th>
+			<th scope="col">Description</th>
+			<th scope="col">Type</th>
+			<th scope="col">Default</th>
+			<th scope="col">Range</th>
+		</tr>
+	</thead>
+	<tbody><tr>
+			<td><a href="/opcodes/key">key</a></td>
+			<td>Equivalent to using <a href="/opcodes/lokey">lokey</a>, <a href="/opcodes/hikey">hikey</a> and <a href="/opcodes/pitch_keycenter">pitch_keycenter</a> and setting them all to the same note value.</td>
+			<td>integer</td>
+			<td>N/A</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/lokey">lokey</a></td>
+			<td>Determine the low boundary of a certain <a href="/headers/region">region</a>.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/hikey">hikey</a></td>
+			<td>Determine the high boundary of a certain <a href="/headers/region">region</a>.</td>
+			<td>integer</td>
+			<td>127</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/lovel">lovel</a></td>
+			<td>If a note with velocity value equal to or higher than <code>lovel</code> AND equal to or lower than <code>hivel</code> is played, the region will play.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/hivel">hivel</a></td>
+			<td>If a note with velocity value equal to or higher than <code>lovel</code> AND equal to or lower than <code>hivel</code> is played, the region will play.</td>
+			<td>integer</td>
+			<td>127</td>
+			<td>0 to 127 </td>
+		</tr></tbody>
+</table>
+<h2><a href="/misc/categories#region-logic">Region Logic</a>: MIDI Conditions</h2>
+<table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">Opcode</th>
+			<th scope="col">Description</th>
+			<th scope="col">Type</th>
+			<th scope="col">Default</th>
+			<th scope="col">Range</th>
+		</tr>
+	</thead>
+	<tbody><tr>
+			<td><a href="/opcodes/lochan">lochan</a></td>
+			<td>If incoming notes have a MIDI channel between <code>lochan</code> and <code>hichan</code>, the region will play.</td>
+			<td>integer</td>
+			<td>1</td>
+			<td>1 to 16 </td>
+		</tr><tr>
+			<td><a href="/opcodes/hichan">hichan</a></td>
+			<td>If incoming notes have a MIDI channel between <code>lochan</code> and <code>hichan</code>, the region will play.</td>
+			<td>integer</td>
+			<td>16</td>
+			<td>1 to 16 </td>
+		</tr><tr>
+			<td><a href="/opcodes/loccN">loccN</a></td>
+			<td>Defines the range of the last MIDI controller N required for the region to play.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/hiccN">hiccN</a></td>
+			<td>Defines the range of the last MIDI controller N required for the region to play.</td>
+			<td>integer</td>
+			<td>127</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/lobend">lobend</a></td>
+			<td>Defines the range of the last Pitch Bend message required for the region to play.</td>
+			<td>integer</td>
+			<td>-8192</td>
+			<td>-8192 to 8192 </td>
+		</tr><tr>
+			<td><a href="/opcodes/hibend">hibend</a></td>
+			<td>Defines the range of the last Pitch Bend message required for the region to play.</td>
+			<td>integer</td>
+			<td>8192</td>
+			<td>-8192 to 8192 </td>
+		</tr><tr>
+			<td><a href="/opcodes/sw_lokey">sw_lokey</a></td>
+			<td>Defines the range of the keyboard to be used as trigger selectors for the <a href="/opcodes/sw_last">sw_last</a> opcode.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/sw_hikey">sw_hikey</a></td>
+			<td>Defines the range of the keyboard to be used as trigger selectors for the <a href="/opcodes/sw_last">sw_last</a> opcode.</td>
+			<td>integer</td>
+			<td>127</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/sw_last">sw_last</a></td>
+			<td>Enables the region to play if the last key pressed in the range specified by <a href="/opcodes/sw_lokey">sw_lokey and sw_hikey</a> is equal to the <code>sw_last</code> value.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/sw_down">sw_down</a></td>
+			<td>Enables the region to play if the key equal to <code>sw_down</code> value is depressed. Key has to be in the range specified by <a href="/opcodes/sw_lokey">sw_lokey and sw_hikey</a>.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/sw_up">sw_up</a></td>
+			<td>Enables the region to play if the key equal to <code>sw_up</code> value is not depressed.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/sw_previous">sw_previous</a></td>
+			<td>Previous note value. The region will play if last note-on message was equal to <code>sw_previous</code> value.</td>
+			<td>integer</td>
+			<td>N/A</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/sw_vel">sw_vel</a></td>
+			<td>Allows overriding the velocity for the region with the velocity of the previous note.</td>
+			<td>string</td>
+			<td>current</td>
+			<td>current, previous</td>
+		</tr></tbody>
+</table>
+<h2><a href="/misc/categories#region-logic">Region Logic</a>: Internal Conditions</h2>
+<table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">Opcode</th>
+			<th scope="col">Description</th>
+			<th scope="col">Type</th>
+			<th scope="col">Default</th>
+			<th scope="col">Range</th>
+		</tr>
+	</thead>
+	<tbody><tr>
+			<td><a href="/opcodes/lobpm">lobpm</a></td>
+			<td>Host tempo value.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 500 bpm</td>
+		</tr><tr>
+			<td><a href="/opcodes/hibpm">hibpm</a></td>
+			<td>Host tempo value.</td>
+			<td>float</td>
+			<td>500</td>
+			<td>0 to 500 bpm</td>
+		</tr><tr>
+			<td><a href="/opcodes/lochanaft">lochanaft</a></td>
+			<td>Defines the range of last Channel Aftertouch message required for the region to play.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/hichanaft">hichanaft</a></td>
+			<td>Defines the range of last Channel Aftertouch message required for the region to play.</td>
+			<td>integer</td>
+			<td>127</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/lopolyaft">lopolyaft</a></td>
+			<td>Defines the range of last Polyphonic Aftertouch message required for the region to play.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/hipolyaft">hipolyaft</a></td>
+			<td>Defines the range of last Polyphonic Aftertouch message required for the region to play.</td>
+			<td>integer</td>
+			<td>127</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/lorand">lorand</a></td>
+			<td>The region will play if the random number is equal to or higher than <code>lorand</code>, and lower than <code>hirand</code>.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 1 </td>
+		</tr><tr>
+			<td><a href="/opcodes/hirand">hirand</a></td>
+			<td>The region will play if the random number is equal to or higher than <code>lorand</code>, and lower than <code>hirand</code>.</td>
+			<td>float</td>
+			<td>1</td>
+			<td>0 to 1 </td>
+		</tr><tr>
+			<td><a href="/opcodes/seq_length">seq_length</a></td>
+			<td>Sequence length, used together with <a href="/opcodes/seq_position">seq_position</a> to use samples as round robins.</td>
+			<td>integer</td>
+			<td>1</td>
+			<td>1 to 100 </td>
+		</tr><tr>
+			<td><a href="/opcodes/seq_position">seq_position</a></td>
+			<td>Sequence position. The region will play if the internal sequence counter is equal to <code>seq_position</code>.</td>
+			<td>integer</td>
+			<td>1</td>
+			<td>1 to 100 </td>
+		</tr></tbody>
+</table>
+<h2><a href="/misc/categories#region-logic">Region Logic</a>: Triggers</h2>
+<table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">Opcode</th>
+			<th scope="col">Description</th>
+			<th scope="col">Type</th>
+			<th scope="col">Default</th>
+			<th scope="col">Range</th>
+		</tr>
+	</thead>
+	<tbody><tr>
+			<td><a href="/opcodes/trigger">trigger</a></td>
+			<td>Sets the trigger which will be used for the sample to play.</td>
+			<td>string</td>
+			<td>attack</td>
+			<td>attack, release, first, legato, release_key</td>
+		</tr><tr>
+			<td><a href="/opcodes/on_loccN">on_loccN</a></td>
+			<td>If a MIDI control message with a value between <code>on_loccN</code> and <code>on_hiccN</code> is received, the region will play. Default value is -1, it means unassigned.</td>
+			<td>integer</td>
+			<td>-1</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/on_hiccN">on_hiccN</a></td>
+			<td>If a MIDI control message with a value between <code>on_loccN</code> and <code>on_hiccN</code> is received, the region will play. Default value is -1, it means unassigned.</td>
+			<td>integer</td>
+			<td>-1</td>
+			<td>0 to 127 </td>
+		</tr></tbody>
+</table>
+<h2><a href="/misc/categories#performance-parameters">Performance Parameters</a>: Amplifier</h2>
+<table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">Opcode</th>
+			<th scope="col">Description</th>
+			<th scope="col">Type</th>
+			<th scope="col">Default</th>
+			<th scope="col">Range</th>
+		</tr>
+	</thead>
+	<tbody><tr>
+			<td><a href="/opcodes/pan">pan</a></td>
+			<td>The panoramic position for the region.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-100 to 100 %</td>
+		</tr><tr>
+			<td><a href="/opcodes/position">position</a></td>
+			<td>Only operational for stereo samples, <code>position</code> defines the position in the stereo field of a stereo signal, after channel mixing as defined in the <a href="/opcodes/width">width</a> opcode.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-100 to 100 %</td>
+		</tr><tr>
+			<td><a href="/opcodes/volume">volume</a></td>
+			<td>The volume for the region, in decibels.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-144 to 6 dB</td>
+		</tr><tr>
+			<td><a href="/opcodes/gain_ccN">gain_ccN</a></td>
+			<td>Gain applied on MIDI control N, in decibels.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-144 to 48 dB</td>
+		</tr><tr>
+			<td><a href="/opcodes/width">width</a></td>
+			<td>Only operational for stereo samples, width defines the amount of channel mixing applied to play the sample.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-100 to 100 %</td>
+		</tr><tr>
+			<td><a href="/opcodes/amp_keycenter">amp_keycenter</a></td>
+			<td>Center key for amplifier keyboard tracking. In this key, the amplifier keyboard tracking will have no effect.</td>
+			<td>integer</td>
+			<td>60</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/amp_keytrack">amp_keytrack</a></td>
+			<td>Amplifier keyboard tracking (change in amplitude per key) in decibels.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-96 to 12 dB</td>
+		</tr><tr>
+			<td><a href="/opcodes/amp_veltrack">amp_veltrack</a></td>
+			<td>Amplifier velocity tracking, represents how much the amplitude changes with incoming note velocity.</td>
+			<td>float</td>
+			<td>100</td>
+			<td>-100 to 100 %</td>
+		</tr><tr>
+			<td><a href="/opcodes/amp_velcurve_N">amp_velcurve_N</a></td>
+			<td>User-defined amplifier velocity curve.</td>
+			<td>float</td>
+			<td>Standard curve (see <a href="/opcodes/amp_veltrack">amp_veltrack</a>)</td>
+			<td>0 to 1 </td>
+		</tr><tr>
+			<td><a href="/opcodes/amp_random">amp_random</a></td>
+			<td>Random volume for the region, in decibels.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 24 dB</td>
+		</tr><tr>
+			<td><a href="/opcodes/rt_decay">rt_decay</a></td>
+			<td>Applies only to regions that triggered through trigger=release. The volume decrease (in decibels) per seconds after the note has been attacked.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 200 dB</td>
+		</tr><tr>
+			<td><a href="/opcodes/xf_cccurve">xf_cccurve</a></td>
+			<td>MIDI controllers crossfade curve for the region.</td>
+			<td>string</td>
+			<td>power</td>
+			<td>gain, power</td>
+		</tr><tr>
+			<td><a href="/opcodes/xf_keycurve">xf_keycurve</a></td>
+			<td>Keyboard crossfade curve for the region.</td>
+			<td>string</td>
+			<td>power</td>
+			<td>gain, power</td>
+		</tr><tr>
+			<td><a href="/opcodes/xf_velcurve">xf_velcurve</a></td>
+			<td>Velocity crossfade curve for the region.</td>
+			<td>string</td>
+			<td>power</td>
+			<td>gain, power</td>
+		</tr><tr>
+			<td><a href="/opcodes/xfin_loccN">xfin_loccN</a></td>
+			<td>Fade in control based on MIDI CC.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/xfin_hiccN">xfin_hiccN</a></td>
+			<td>Fade in control based on MIDI CC.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/xfout_loccN">xfout_loccN</a></td>
+			<td>Fade out control based on MIDI CC.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/xfout_hiccN">xfout_hiccN</a></td>
+			<td>Fade out control based on MIDI CC.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/xfin_lokey">xfin_lokey</a></td>
+			<td>Fade in control based on MIDI note (keyboard position).</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/xfin_hikey">xfin_hikey</a></td>
+			<td>Fade in control based on MIDI note (keyboard position).</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/xfout_lokey">xfout_lokey</a></td>
+			<td>Fade out control based on MIDI note number (keyboard position).</td>
+			<td>integer</td>
+			<td>127</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/xfout_hikey">xfout_hikey</a></td>
+			<td>Fade out control based on MIDI note number (keyboard position).</td>
+			<td>integer</td>
+			<td>127</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/xfin_lovel">xfin_lovel</a></td>
+			<td>Fade in control based on velocity.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/xfin_hivel">xfin_hivel</a></td>
+			<td>Fade in control based on velocity.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/xfout_lovel">xfout_lovel</a></td>
+			<td>Fade out control, based on velocity.</td>
+			<td>integer</td>
+			<td>127</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/xfout_hivel">xfout_hivel</a></td>
+			<td>Fade out control, based on velocity.</td>
+			<td>integer</td>
+			<td>127</td>
+			<td>0 to 127 </td>
+		</tr></tbody>
+</table>
+<h2><a href="/misc/categories#performance-parameters">Performance Parameters</a>: EQ</h2>
+<table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">Opcode</th>
+			<th scope="col">Description</th>
+			<th scope="col">Type</th>
+			<th scope="col">Default</th>
+			<th scope="col">Range</th>
+		</tr>
+	</thead>
+	<tbody><tr>
+			<td><a href="/opcodes/eqN_bw">eqN_bw</a></td>
+			<td>Bandwidth of the equalizer band, in octaves.</td>
+			<td>float</td>
+			<td>1</td>
+			<td>0.001 to 4 octaves</td>
+		</tr><tr>
+			<td><a href="/opcodes/eqN_bwccX">eqN_bwccX</a></td>
+			<td></td>
+			<td>float</td>
+			<td>0</td>
+			<td>-4 to 4 octaves</td>
+		</tr><tr>
+			<td><a href="/opcodes/eqN_freq">eqN_freq</a></td>
+			<td>Frequency of the equalizer band, in Hertz.</td>
+			<td>float</td>
+			<td>eq1_freq=50<br />eq1_freq=500<br />eq1_freq=5000</td>
+			<td>0 to 30000 Hz</td>
+		</tr><tr>
+			<td><a href="/opcodes/eqN_freqccX">eqN_freqccX</a></td>
+			<td></td>
+			<td>float</td>
+			<td>0</td>
+			<td>-30000 to 30000 Hz</td>
+		</tr><tr>
+			<td><a href="/opcodes/eqN_vel2freq">eqN_vel2freq</a></td>
+			<td>Frequency change of the equalizer band with MIDI velocity, in Hertz.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-30000 to 30000 Hz</td>
+		</tr><tr>
+			<td><a href="/opcodes/eqN_gain">eqN_gain</a></td>
+			<td>Gain of the equalizer band, in decibels.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-96 to 24 dB</td>
+		</tr><tr>
+			<td><a href="/opcodes/eqN_gainccX">eqN_gainccX</a></td>
+			<td></td>
+			<td>float</td>
+			<td>0</td>
+			<td>-96 to 24 dB</td>
+		</tr><tr>
+			<td><a href="/opcodes/eqN_vel2gain">eqN_vel2gain</a></td>
+			<td>Gain change of the equalizer band with MIDI velocity, in decibels.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-96 to 24 dB</td>
+		</tr></tbody>
+</table>
+<h2><a href="/misc/categories#performance-parameters">Performance Parameters</a>: Filter</h2>
+<table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">Opcode</th>
+			<th scope="col">Description</th>
+			<th scope="col">Type</th>
+			<th scope="col">Default</th>
+			<th scope="col">Range</th>
+		</tr>
+	</thead>
+	<tbody><tr>
+			<td><a href="/opcodes/cutoff">cutoff</a></td>
+			<td>Sets the cutoff frequency (Hz) of the <a href="/misc/categories#performance-parameters">filters</a>.</td>
+			<td>float</td>
+			<td>filter disabled</td>
+			<td>0 to SampleRate / 2 Hz</td>
+		</tr><tr>
+			<td><a href="/opcodes/cutoff_ccN">cutoff_ccN</a></td>
+			<td>The variation in the cutoff frequency when MIDI continuous controller N is received.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>-9600 to 9600 cents</td>
+		</tr><tr>
+			<td><a href="/opcodes/cutoff_chanaft">cutoff_chanaft</a></td>
+			<td>The variation in the cutoff frequency when MIDI channel aftertouch messages are received, in cents.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>-9600 to 9600 cents</td>
+		</tr><tr>
+			<td><a href="/opcodes/cutoff_polyaft">cutoff_polyaft</a></td>
+			<td>The variation in the cutoff frequency when MIDI polyphonic aftertouch messages are received, in cents.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>-9600 to 9600 cents</td>
+		</tr><tr>
+			<td><a href="/opcodes/fil_keytrack">fil_keytrack</a></td>
+			<td>Filter keyboard tracking (change on cutoff for each key) in cents.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 1200 cents</td>
+		</tr><tr>
+			<td><a href="/opcodes/fil_keycenter">fil_keycenter</a></td>
+			<td>Center key for filter keyboard tracking.</td>
+			<td>integer</td>
+			<td>60</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/fil_random">fil_random</a></td>
+			<td>Random value added to the filter cutoff for the region, in cents.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 9600 cents</td>
+		</tr><tr>
+			<td><a href="/opcodes/fil_type">fil_type</a></td>
+			<td>Filter type.</td>
+			<td>string</td>
+			<td>lpf_2p</td>
+			<td>lpf_1p, hpf_1p, lpf_2p, hpf_2p, bpf_2p, brf_2p</td>
+		</tr><tr>
+			<td><a href="/opcodes/fil_veltrack">fil_veltrack</a></td>
+			<td>Filter velocity tracking, the amount by which the cutoff changes with incoming note velocity, in cents.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>-9600 to 9600 cents</td>
+		</tr><tr>
+			<td><a href="/opcodes/resonance">resonance</a></td>
+			<td>The filter cutoff resonance value, in decibels.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 40 dB</td>
+		</tr></tbody>
+</table>
+<h2><a href="/misc/categories#performance-parameters">Performance Parameters</a>: Pitch</h2>
+<table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">Opcode</th>
+			<th scope="col">Description</th>
+			<th scope="col">Type</th>
+			<th scope="col">Default</th>
+			<th scope="col">Range</th>
+		</tr>
+	</thead>
+	<tbody><tr>
+			<td><a href="/opcodes/bend_up">bend_up</a></td>
+			<td>Pitch bend range when Bend Wheel or Joystick is moved up, in cents.</td>
+			<td>integer</td>
+			<td>200</td>
+			<td>-9600 to 9600 cents</td>
+		</tr><tr>
+			<td><a href="/opcodes/bend_down">bend_down</a></td>
+			<td>Pitch bend range when Bend Wheel or Joystick is moved down, in cents.</td>
+			<td>integer</td>
+			<td>-200</td>
+			<td>-9600 to 9600 cents</td>
+		</tr><tr>
+			<td><a href="/opcodes/bend_step">bend_step</a></td>
+			<td>Pitch bend step, in cents.</td>
+			<td>integer</td>
+			<td>1</td>
+			<td>1 to 1200 cents</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitch_keycenter">pitch_keycenter</a></td>
+			<td>Root key for the <a href="/opcodes/sample">sample</a>.</td>
+			<td>integer</td>
+			<td>60</td>
+			<td>-127 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/pitch_keytrack">pitch_keytrack</a></td>
+			<td>Within the region, this value defines how much the pitch changes with every note.</td>
+			<td>integer</td>
+			<td>100</td>
+			<td>-1200 to 1200 </td>
+		</tr><tr>
+			<td><a href="/opcodes/pitch_random">pitch_random</a></td>
+			<td>Random tuning for the region, in cents.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 9600 cents</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitch_veltrack">pitch_veltrack</a></td>
+			<td>Pitch velocity tracking, represents how much the pitch changes with incoming note velocity, in cents.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>-9600 to 9600 cents</td>
+		</tr><tr>
+			<td><a href="/opcodes/transpose">transpose</a></td>
+			<td>The transposition value for this region which will be applied to the sample.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>-127 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/tune">tune</a></td>
+			<td>The fine tuning for the sample, in cents.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>-100 to 100 cents</td>
+		</tr></tbody>
+</table>
+<h2><a href="/misc/categories#modulation">Modulation</a>: <a href="/types/envelope_generators">Envelope Generators</a></h2>
+<table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">Opcode</th>
+			<th scope="col">Description</th>
+			<th scope="col">Type</th>
+			<th scope="col">Default</th>
+			<th scope="col">Range</th>
+		</tr>
+	</thead>
+	<tbody><tr>
+			<td><a href="/opcodes/ampeg_attack">ampeg_attack</a></td>
+			<td>EG attack time.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_attackccN">ampeg_attackccN</a></td>
+			<td></td>
+			<td>float</td>
+			<td>0</td>
+			<td>-100 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_vel2attack">ampeg_vel2attack</a></td>
+			<td>Velocity effect on EG attack time.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-100 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_decay">ampeg_decay</a></td>
+			<td>EG decay time.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_decayccN">ampeg_decayccN</a></td>
+			<td></td>
+			<td>float</td>
+			<td>0</td>
+			<td>-100 to 100 </td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_vel2decay">ampeg_vel2decay</a></td>
+			<td>Velocity effect on pitch EG decay time.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-100 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_delay">ampeg_delay</a></td>
+			<td>EG delay time.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_delayccN">ampeg_delayccN</a></td>
+			<td></td>
+			<td>float</td>
+			<td>0</td>
+			<td>-100 to 100 </td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_vel2delay">ampeg_vel2delay</a></td>
+			<td>Velocity effect on EG delay time.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-100 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_hold">ampeg_hold</a></td>
+			<td>EG hold time.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_holdccN">ampeg_holdccN</a></td>
+			<td></td>
+			<td>float</td>
+			<td>0</td>
+			<td>-100 to 100 </td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_vel2hold">ampeg_vel2hold</a></td>
+			<td>Velocity effect on EG hold time.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-100 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_release">ampeg_release</a></td>
+			<td>EG release time (after note release).</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_releaseccN">ampeg_releaseccN</a></td>
+			<td></td>
+			<td>float</td>
+			<td>0</td>
+			<td>-100 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_vel2release">ampeg_vel2release</a></td>
+			<td>Velocity effect on EG release time.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-100 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_sustain">ampeg_sustain</a></td>
+			<td>EG sustain level, in percentage.</td>
+			<td>float</td>
+			<td>100</td>
+			<td>0 to 100 %</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_sustainccN">ampeg_sustainccN</a></td>
+			<td></td>
+			<td>float</td>
+			<td>0</td>
+			<td>-100 to 100 %</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_vel2sustain">ampeg_vel2sustain</a></td>
+			<td>Velocity effect on EG sustain level, in percentage.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-100 to 100 %</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_start">ampeg_start</a></td>
+			<td>Envelope start level, in percentage.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 100 %</td>
+		</tr><tr>
+			<td><a href="/opcodes/ampeg_startccN">ampeg_startccN</a></td>
+			<td></td>
+			<td>float</td>
+			<td>0</td>
+			<td>-100 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/fileg_attack">fileg_attack</a></td>
+			<td>EG attack time.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/fileg_vel2attack">fileg_vel2attack</a></td>
+			<td>Velocity effect on EG attack time.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-100 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/fileg_decay">fileg_decay</a></td>
+			<td>EG decay time.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/fileg_vel2decay">fileg_vel2decay</a></td>
+			<td>Velocity effect on filter EG decay time.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-100 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/fileg_delay">fileg_delay</a></td>
+			<td>EG delay time.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/fileg_vel2delay">fileg_vel2delay</a></td>
+			<td>Velocity effect on filter EG delay time.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-100 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/fileg_depth">fileg_depth</a></td>
+			<td>Envelope depth.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>-12000 to 12000 cents</td>
+		</tr><tr>
+			<td><a href="/opcodes/fileg_vel2depth">fileg_vel2depth</a></td>
+			<td>Velocity effect on EG depth, in cents for pitch or filter cutoff.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>-12000 to 12000 cents</td>
+		</tr><tr>
+			<td><a href="/opcodes/fileg_hold">fileg_hold</a></td>
+			<td>EG hold time.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/fileg_vel2hold">fileg_vel2hold</a></td>
+			<td>Velocity effect on EG hold time.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-100 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/fileg_release">fileg_release</a></td>
+			<td>EG release time (after note release).</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/fileg_vel2release">fileg_vel2release</a></td>
+			<td>Velocity effect on EG release time.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-100 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/fileg_start">fileg_start</a></td>
+			<td>Envelope start level, in percentage.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 100 %</td>
+		</tr><tr>
+			<td><a href="/opcodes/fileg_sustain">fileg_sustain</a></td>
+			<td>EG sustain level, in percentage.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 100 %</td>
+		</tr><tr>
+			<td><a href="/opcodes/fileg_vel2sustain">fileg_vel2sustain</a></td>
+			<td>Velocity effect on EG sustain level, in percentage.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-100 to 100 %</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitcheg_attack">pitcheg_attack</a></td>
+			<td>EG attack time.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitcheg_vel2attack">pitcheg_vel2attack</a></td>
+			<td>Velocity effect on EG attack time.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-100 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitcheg_decay">pitcheg_decay</a></td>
+			<td>EG decay time.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitcheg_vel2decay">pitcheg_vel2decay</a></td>
+			<td>Velocity effect on filter EG decay time.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-100 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitcheg_delay">pitcheg_delay</a></td>
+			<td>EG delay time.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitcheg_vel2delay">pitcheg_vel2delay</a></td>
+			<td>Velocity effect on filter EG delay time.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-100 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitcheg_depth">pitcheg_depth</a></td>
+			<td>Envelope depth.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>-12000 to 12000 cents</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitcheg_vel2depth">pitcheg_vel2depth</a></td>
+			<td>Velocity effect on EG depth, in cents for pitch or filter cutoff.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>-12000 to 12000 cents</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitcheg_hold">pitcheg_hold</a></td>
+			<td>EG hold time.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitcheg_vel2hold">pitcheg_vel2hold</a></td>
+			<td>Velocity effect on EG hold time.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-100 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitcheg_release">pitcheg_release</a></td>
+			<td>EG release time (after note release).</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitcheg_vel2release">pitcheg_vel2release</a></td>
+			<td>Velocity effect on EG release time.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-100 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitcheg_start">pitcheg_start</a></td>
+			<td>Envelope start level, in percentage.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 100 %</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitcheg_sustain">pitcheg_sustain</a></td>
+			<td>EG sustain level, in percentage.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 100 %</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitcheg_vel2sustain">pitcheg_vel2sustain</a></td>
+			<td>Velocity effect on EG sustain level, in percentage.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-100 to 100 %</td>
+		</tr></tbody>
+</table>
+<h2><a href="/misc/categories#modulation">Modulation</a>: <a href="/types/lfo">LFO</a></h2>
+<table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">Opcode</th>
+			<th scope="col">Description</th>
+			<th scope="col">Type</th>
+			<th scope="col">Default</th>
+			<th scope="col">Range</th>
+		</tr>
+	</thead>
+	<tbody><tr>
+			<td><a href="/opcodes/amplfo_delay">amplfo_delay</a></td>
+			<td>The time before the LFO starts oscillating.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/amplfo_depth">amplfo_depth</a></td>
+			<td>LFO depth.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-10 to 10 dB</td>
+		</tr><tr>
+			<td><a href="/opcodes/amplfo_depthccN">amplfo_depthccN</a></td>
+			<td></td>
+			<td>float</td>
+			<td>0</td>
+			<td>-10 to 10 dB</td>
+		</tr><tr>
+			<td><a href="/opcodes/amplfo_depthchanaft">amplfo_depthchanaft</a></td>
+			<td>LFO depth when channel aftertouch MIDI messages are received.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-10 to 10 dB</td>
+		</tr><tr>
+			<td><a href="/opcodes/amplfo_depthpolyaft">amplfo_depthpolyaft</a></td>
+			<td>LFO depth when polyphonic aftertouch MIDI messages are received.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-10 to 10 dB</td>
+		</tr><tr>
+			<td><a href="/opcodes/amplfo_fade">amplfo_fade</a></td>
+			<td>LFO fade-in effect time.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/amplfo_freq">amplfo_freq</a></td>
+			<td>LFO frequency, in hertz.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 20 Hz</td>
+		</tr><tr>
+			<td><a href="/opcodes/amplfo_freqccN">amplfo_freqccN</a></td>
+			<td></td>
+			<td>float</td>
+			<td>0</td>
+			<td>-200 to 200 Hz</td>
+		</tr><tr>
+			<td><a href="/opcodes/amplfo_freqchanaft">amplfo_freqchanaft</a></td>
+			<td>LFO frequency change when channel aftertouch MIDI messages are received, in Hertz.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-200 to 200 Hz</td>
+		</tr><tr>
+			<td><a href="/opcodes/amplfo_freqpolyaft">amplfo_freqpolyaft</a></td>
+			<td>LFO frequency change when polyphonic aftertouch MIDI messages are received, in Hertz.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-200 to 200 Hz</td>
+		</tr><tr>
+			<td><a href="/opcodes/fillfo_delay">fillfo_delay</a></td>
+			<td>The time before the LFO starts oscillating.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/fillfo_depth">fillfo_depth</a></td>
+			<td>LFO depth.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-1200 to 1200 cents</td>
+		</tr><tr>
+			<td><a href="/opcodes/fillfo_depthccN">fillfo_depthccN</a></td>
+			<td></td>
+			<td>float</td>
+			<td>0</td>
+			<td>-1200 to 1200 cents</td>
+		</tr><tr>
+			<td><a href="/opcodes/fillfo_depthchanaft">fillfo_depthchanaft</a></td>
+			<td>LFO depth when channel aftertouch MIDI messages are received.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-1200 to 1200 cents</td>
+		</tr><tr>
+			<td><a href="/opcodes/fillfo_depthpolyaft">fillfo_depthpolyaft</a></td>
+			<td>LFO depth when polyphonic aftertouch MIDI messages are received.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-1200 to 1200 cents</td>
+		</tr><tr>
+			<td><a href="/opcodes/fillfo_fade">fillfo_fade</a></td>
+			<td>LFO fade-in effect time.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/fillfo_freq">fillfo_freq</a></td>
+			<td>LFO frequency, in hertz.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 20 Hz</td>
+		</tr><tr>
+			<td><a href="/opcodes/fillfo_freqccN">fillfo_freqccN</a></td>
+			<td></td>
+			<td>float</td>
+			<td>0</td>
+			<td>-200 to 200 Hz</td>
+		</tr><tr>
+			<td><a href="/opcodes/fillfo_freqchanaft">fillfo_freqchanaft</a></td>
+			<td>LFO frequency change when channel aftertouch MIDI messages are received, in Hertz.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-200 to 200 Hz</td>
+		</tr><tr>
+			<td><a href="/opcodes/fillfo_freqpolyaft">fillfo_freqpolyaft</a></td>
+			<td>LFO frequency change when polyphonic aftertouch MIDI messages are received, in Hertz.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-200 to 200 Hz</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitchlfo_delay">pitchlfo_delay</a></td>
+			<td>The time before the LFO starts oscillating.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitchlfo_depth">pitchlfo_depth</a></td>
+			<td>LFO depth.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-1200 to 1200 cents</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitchlfo_depthccN">pitchlfo_depthccN</a></td>
+			<td></td>
+			<td>float</td>
+			<td>0</td>
+			<td>-1200 to 1200 cents</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitchlfo_depthchanaft">pitchlfo_depthchanaft</a></td>
+			<td>LFO depth when channel aftertouch MIDI messages are received.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-1200 to 1200 cents</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitchlfo_depthpolyaft">pitchlfo_depthpolyaft</a></td>
+			<td>LFO depth when polyphonic aftertouch MIDI messages are received.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-1200 to 1200 cents</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitchlfo_fade">pitchlfo_fade</a></td>
+			<td>LFO fade-in effect time.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 100 seconds</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitchlfo_freq">pitchlfo_freq</a></td>
+			<td>LFO frequency, in hertz.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 20 Hz</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitchlfo_freqccN">pitchlfo_freqccN</a></td>
+			<td></td>
+			<td>float</td>
+			<td>0</td>
+			<td>-200 to 200 Hz</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitchlfo_freqchanaft">pitchlfo_freqchanaft</a></td>
+			<td>LFO frequency change when channel aftertouch MIDI messages are received, in Hertz.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-200 to 200 Hz</td>
+		</tr><tr>
+			<td><a href="/opcodes/pitchlfo_freqpolyaft">pitchlfo_freqpolyaft</a></td>
+			<td>LFO frequency change when polyphonic aftertouch MIDI messages are received, in Hertz.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-200 to 200 Hz</td>
+		</tr></tbody>
+</table>
+<h2>Effects</h2>
+<table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">Opcode</th>
+			<th scope="col">Description</th>
+			<th scope="col">Type</th>
+			<th scope="col">Default</th>
+			<th scope="col">Range</th>
+		</tr>
+	</thead>
+	<tbody><tr>
+			<td><a href="/opcodes/effect1">effect1</a></td>
+			<td>Level of effect1 send, in percentage (reverb in Cakewalk sfz).</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 100 %</td>
+		</tr><tr>
+			<td><a href="/opcodes/effect2">effect2</a></td>
+			<td>Level of effect2 send, in percentage (chorus in Cakewalk sfz).</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 100 %</td>
+		</tr></tbody>
+</table>
+
+					</article>
+				</div>
+				<div class="col-md-3">
+					<aside>
+
+						<div class="card border-dark mb-3">
+							<div class="card-header text-light"
+								style="background-color:#222">
+								<i class="fas fa-eye"
+									aria-hidden="true"></i>
+								Follow us
+							</div>
+							<div class="card-body" style="padding: 0.5rem">
+								<ul class="nav nav-pills flex-column">
+	<li class="nav-item">
+										<a class="nav-link" href="https://github.com/sfzformat/"
+											title="GitHub Organization" style="padding: 0.35rem 0.25rem">
+										<i class="fab fa-github fa-fw"
+										aria-hidden="true"></i>
+										GitHub Organization</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://www.plogue.com/plgfrms/viewforum.php?f=14"
+											title="Plogue Forum" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-users fa-fw"
+										aria-hidden="true"></i>
+										Plogue Forum</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://discord.gg/t7nrZ6d"
+											title="Discord Chat" style="padding: 0.35rem 0.25rem">
+										<i class="fab fa-discord fa-fw"
+										aria-hidden="true"></i>
+										Discord Chat</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://kiwiirc.com/nextclient/#irc://irc.freenode.net:+6697/#sfzformat"
+											title="Internet Relay Chat" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-hashtag fa-fw"
+										aria-hidden="true"></i>
+										IRC</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="/atom.xml"
+											title="News Atom Feed" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-rss fa-fw"
+										aria-hidden="true"></i>
+										News Atom Feed</a>
+									</li>
+	
+								</ul>
+							</div>
+						</div>
+
+						<div class="card border-dark mb-3">
+							<div class="card-header text-light"
+								style="background-color:#222">
+								<i class="fas fa-link"
+									aria-hidden="true"></i>
+								Quick links
+							</div>
+							<div class="card-body" style="padding: 0.5rem">
+								<ul class="nav nav-pills flex-column">
+	<li class="nav-item">
+										<a class="nav-link" href="/legacy"
+											title="Old rgc:audio SFZ page" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-book fa-fw"
+										aria-hidden="true"></i>
+										Old rgc:audio SFZ page</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="http://www.drealm.info/sfz/"
+											title="Peter L. Jones' SFZ page" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-book fa-fw"
+										aria-hidden="true"></i>
+										Peter L. Jones' SFZ page</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://github.com/sfzinstruments/"
+											title="Free SFZ Instruments" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-download fa-fw"
+										aria-hidden="true"></i>
+										Free SFZ Instruments</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://www.kvraudio.com/forum/viewtopic.php?f=42&t=508861"
+											title="KVR Forum SFZ post" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-users fa-fw"
+										aria-hidden="true"></i>
+										KVR Forum SFZ post</a>
+									</li>
+	
+								</ul>
+							</div>
+						</div>
+
+
+					</aside>
+				</div>
+			</div>
+			<hr>
+			<footer><p>
+					This site is open source.
+					<a href="https://github.com/sfzformat/sfzformat.github.io/edit/source/misc/sfz1.md">
+					Improve this page</a>
+				</p>
+			</footer>
+
+		</div>
+		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
+		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
+		<script>
+			$(document).ready(function(){
+			$('pre').addClass('prettyprint lang-sfz');
+			prettyPrint();
+			});
+		</script>
+
+
+	</body>
+</html>

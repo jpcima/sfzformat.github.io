@@ -1,0 +1,1429 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>SFZ v2 Opcodes - SFZ Format</title>
+
+		<meta name="author" content="Karoryfer Samples and SFZ Format Team">
+		<meta name="web-author" content="RedTide and SFZ Format Team">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- Atom Feeds -->
+		<link href="/atom.xml" rel="alternate" title="News" type="application/atom+xml" />
+
+		<!-- Favicon Generator Icons -->
+		<link rel="apple-touch-icon" sizes="152x152" href="/assets/ico/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/assets/ico/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/assets/ico/favicon-16x16.png">
+		<link rel="manifest" href="/assets/ico/site.webmanifest">
+		<link rel="mask-icon" href="/assets/ico/safari-pinned-tab.svg" color="#5bbad5">
+		<link rel="shortcut icon" href="/assets/ico/favicon.ico">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-config" content="/assets/ico/browserconfig.xml">
+		<meta name="theme-color" content="#ffffff">
+
+		<!-- Stylesheets -->
+		<link href="/assets/css/style.min.css" rel="stylesheet" media="screen">
+		<link rel="stylesheet" type="text/css" href="/assets/css/prettify.css">
+
+		<!-- Font Awesome Icons -->
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/solid.js"       integrity="sha384-Mf3ap7OwO+bjTkzM1RsrothLh38uKXvMWJ2TQPXGHqZcqfeI/cyCV+sfV0IDnBDq" crossorigin="anonymous"></script>
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/brands.js"      integrity="sha384-b2GpqFrJizV0BUEdbrITdOA5HnxnlrErt7MlEERWd6NSJ32rHeibEvyyCuA13OAS" crossorigin="anonymous"></script>
+		<script defer src="https://use.fontawesome.com/releases/v5.11.2/js/fontawesome.js" integrity="sha384-EYYaHDhIRoBhd/Ir/1fPnxg9rZLk/55lKtlNT5KrIcONoCS2kjf7ZWzMoCLLACeo" crossorigin="anonymous"></script>
+
+	</head>
+
+	<body>
+
+		<button onclick="topFunction()" id="scrollButton" title="Go to top">Top</button>
+		<a href="#content" class="sr-only">Skip to content</a>
+		<div class="container">
+
+			<nav class="navbar navbar-expand-lg navbar-dark" style="background-color:#222">
+				<a class="navbar-brand" href="/">
+					<img src="/assets/img/logo.png"
+					width="120" height="30" class="d-inline-block align-top" alt=""></a>
+
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarContent" aria-controls="navbarContent"
+					aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarContent">
+					<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarSyntax"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Syntax</a>
+							<div class="dropdown-menu" aria-labelledby="navbarSyntax">
+		
+			
+								<a class="dropdown-item"
+									href="/headers/">Headers</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/misc/sfz1">SFZ v1 Opcodes</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/misc/sfz2">SFZ v2 Opcodes</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/misc/cakewalk">SFZ v2 Opcodes (Cakewalk)</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/extensions/aria/">ARIA Extensions</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/extensions/linuxsampler/">LinuxSampler Extensions</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/extensions/midi_ccs">Extended MIDI CCs</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/misc/categories">Types & Categories</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarSoftware"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Software</a>
+							<div class="dropdown-menu" aria-labelledby="navbarSoftware">
+		
+			
+								<a class="dropdown-item"
+									href="/software/players">Players</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/software/tools">Tools</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarTutorials"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Tutorials</a>
+							<div class="dropdown-menu" aria-labelledby="navbarTutorials">
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/basic_sfz_file">Basic / Template</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sustained_note_basics">Sustained Note Basics</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/vibrato">Vibrato</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/legato">Legato</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/drum_basics">Drum Basics</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/cymbal_muting">Cymbal Muting</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/brush_stirs">Brush Stirs</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sfz1_modulations">SFZ 1 Modulations</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/sfz2_modulations">SFZ 2 Modulations</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/lfo">Pitch LFO Examples</a>
+			
+		
+			
+								<div class="dropdown-divider"></div>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/tutorials/videos">Video Tutorials</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+		
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="#" id="navbarDocs"
+								data-toggle="dropdown"
+							aria-haspopup="true" aria-expanded="false"> Docs</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDocs">
+		
+			
+								<a class="dropdown-item"
+									href="/docs/website-development-reference">Website Development Reference</a>
+			
+		
+			
+								<a class="dropdown-item"
+									href="/docs/adding-player-opcode-list">Add players description and opcode support pages</a>
+			
+		
+							</div>
+	
+						</li>
+
+	
+						<li class="nav-item">
+							<a class="nav-link"
+								href="/news"> News</a>
+	
+						</li>
+
+					</ul>
+				</div>
+				<form class="form-inline my-2 my-lg-0" role="search"
+					action="/search/">
+					<input class="form-control mr-sm-2" type="search" name="query"
+						placeholder="Search" aria-label="Search">
+				</form>
+			</nav>
+
+			<div class="row mt-4" id="content">
+				<div class="col-md-9">
+					<article><h1>SFZ v2 Opcodes</h1><p>Note that modulations such as (on)ccN, and vel2* opcodes are included in the
+pages describing the parameters they modulate.</p>
+<h2><a href="/misc/categories#sound-source">Sound Source</a>: Sample Playback</h2>
+<table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">Opcode</th>
+			<th scope="col">Description</th>
+			<th scope="col">Type</th>
+			<th scope="col">Default</th>
+			<th scope="col">Range</th>
+		</tr>
+	</thead>
+	<tbody><tr>
+			<td><a href="/opcodes/delay_samples">delay_samples</a></td>
+			<td>Allows the region playback to be postponed for the specified time, measured in samples (and therefore dependent on current sample rate).</td>
+			<td>integer</td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/delay_samples_onccN">delay_samples_onccN</a></td>
+			<td></td>
+			<td>integer</td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/delay_beats">delay_beats</a></td>
+			<td>Delays the start of the region until a certain amount of musical beats are passed.</td>
+			<td>float</td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/stop_beats">stop_beats</a></td>
+			<td>Stops a region after a certain amount of beats have played.</td>
+			<td>float</td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/loop_crossfade">loop_crossfade</a></td>
+			<td>Loop cross fade.</td>
+			<td>float</td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/md5">md5</a></td>
+			<td>Calculates the <a href="https://en.wikipedia.org/wiki/MD5">MD5</a> digital fingerprint hash of a sample file, represented as a sequence of 32 hexadecimal digits.</td>
+			<td>string</td>
+			<td>null</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/reverse_loccN">reverse_loccN</a></td>
+			<td>If MIDI CC X is between <code>reverse_loccN</code> and <code>reverse_hiccN</code>, the region plays reversed.</td>
+			<td>integer</td>
+			<td>N/A</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/reverse_hiccN">reverse_hiccN</a></td>
+			<td>If MIDI CC X is between <code>reverse_loccN</code> and <code>reverse_hiccN</code>, the region plays reversed.</td>
+			<td>integer</td>
+			<td>N/A</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/waveguide">waveguide</a></td>
+			<td>Enables waveguide synthesis for the region.</td>
+			<td>string</td>
+			<td>N/A</td>
+			<td>on, off</td>
+		</tr></tbody>
+</table>
+<h2><a href="/misc/categories#instrument-settings">Instrument Settings</a></h2>
+<table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">Opcode</th>
+			<th scope="col">Description</th>
+			<th scope="col">Type</th>
+			<th scope="col">Default</th>
+			<th scope="col">Range</th>
+		</tr>
+	</thead>
+	<tbody><tr>
+			<td><a href="/opcodes/define">#define</a></td>
+			<td>Creates a variable and gives it a value.</td>
+			<td>string</td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/default_path">default_path</a></td>
+			<td>Relative path for samples.</td>
+			<td>string</td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/note_offset">note_offset</a></td>
+			<td>Tells SFZ to shift all incoming MIDI data by the specified number of notes.</td>
+			<td>integer</td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/octave_offset">octave_offset</a></td>
+			<td>Shifts all incoming MIDI data by the specified octave.</td>
+			<td>integer</td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/set_ccN">set_ccN</a></td>
+			<td>Sets a default initial value for MIDI CC number X, when the instrument is initially loaded.</td>
+			<td>integer</td>
+			<td>N/A</td>
+			<td>0 to 127 </td>
+		</tr></tbody>
+</table>
+<h2><a href="/misc/categories#instrument-settings">Instrument Settings</a>: Voice Lifecycle</h2>
+<table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">Opcode</th>
+			<th scope="col">Description</th>
+			<th scope="col">Type</th>
+			<th scope="col">Default</th>
+			<th scope="col">Range</th>
+		</tr>
+	</thead>
+	<tbody><tr>
+			<td><a href="/opcodes/polyphony">polyphony</a></td>
+			<td>Polyphony voice limit for a group.</td>
+			<td>integer</td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/rt_dead">rt_dead</a></td>
+			<td>Controls whether a release sample should play if its sustain sample has ended, or not.</td>
+			<td>string</td>
+			<td>off</td>
+			<td>on, off</td>
+		</tr></tbody>
+</table>
+<h2><a href="/misc/categories#region-logic">Region Logic</a>: MIDI Conditions</h2>
+<table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">Opcode</th>
+			<th scope="col">Description</th>
+			<th scope="col">Type</th>
+			<th scope="col">Default</th>
+			<th scope="col">Range</th>
+		</tr>
+	</thead>
+	<tbody><tr>
+			<td><a href="/opcodes/sustain_sw">sustain_sw</a></td>
+			<td>Turns the sustain switch on or off.</td>
+			<td>string</td>
+			<td>N/A</td>
+			<td>on, off</td>
+		</tr><tr>
+			<td><a href="/opcodes/sostenuto_sw">sostenuto_sw</a></td>
+			<td>Turns the sostenuto switch on or off.</td>
+			<td>string</td>
+			<td>N/A</td>
+			<td>on, off</td>
+		</tr><tr>
+			<td><a href="/opcodes/loprog">loprog</a></td>
+			<td>The region plays when the MIDI program number is between <code>loprog</code> and <code>hiprog</code>.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/hiprog">hiprog</a></td>
+			<td>The region plays when the MIDI program number is between <code>loprog</code> and <code>hiprog</code>.</td>
+			<td>integer</td>
+			<td>127</td>
+			<td>0 to 127 </td>
+		</tr></tbody>
+</table>
+<h2><a href="/misc/categories#region-logic">Region Logic</a>: Internal Conditions</h2>
+<table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">Opcode</th>
+			<th scope="col">Description</th>
+			<th scope="col">Type</th>
+			<th scope="col">Default</th>
+			<th scope="col">Range</th>
+		</tr>
+	</thead>
+	<tbody><tr>
+			<td><a href="/opcodes/lotimer">lotimer</a></td>
+			<td>Region plays if timer is between <code>lotimer</code> and <code>hitimer</code>.</td>
+			<td>float</td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/hitimer">hitimer</a></td>
+			<td>Region plays if timer is between <code>lotimer</code> and <code>hitimer</code>.</td>
+			<td>float</td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr></tbody>
+</table>
+<h2><a href="/misc/categories#region-logic">Region Logic</a>: Triggers</h2>
+<table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">Opcode</th>
+			<th scope="col">Description</th>
+			<th scope="col">Type</th>
+			<th scope="col">Default</th>
+			<th scope="col">Range</th>
+		</tr>
+	</thead>
+	<tbody><tr>
+			<td><a href="/opcodes/start_loccN">start_loccN</a></td>
+			<td>If a MIDI control message with a value between <code>start_loccN</code> and <code>start_hiccN</code> is received, the region will play. Alias for <a href="/opcodes/on_loccN">on_loccN</a>. Default value is -1, it means unassigned.</td>
+			<td>integer</td>
+			<td>-1</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/start_hiccN">start_hiccN</a></td>
+			<td>If a MIDI control message with a value between <code>start_loccN</code> and <code>start_hiccN</code> is received, the region will play. Alias for <a href="/opcodes/on_hiccN">on_hiccN</a>. Default value is -1, it means unassigned.</td>
+			<td>integer</td>
+			<td>-1</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/stop_loccN">stop_loccN</a></td>
+			<td>If a MIDI control message with a value between <code>stop_loccN</code> and <code>stop_hiccN</code> is received, the region will stop playing. Default value is -1, it means unassigned.</td>
+			<td>integer</td>
+			<td>-1</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/stop_hiccN">stop_hiccN</a></td>
+			<td>If a MIDI control message with a value between <code>stop_loccN</code> and <code>stop_hiccN</code> is received, the region will stop playing. Default value is -1, it means unassigned.</td>
+			<td>integer</td>
+			<td>-1</td>
+			<td>0 to 127 </td>
+		</tr></tbody>
+</table>
+<h2><a href="/misc/categories#performance-parameters">Performance Parameters</a>: Filter</h2>
+<table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">Opcode</th>
+			<th scope="col">Description</th>
+			<th scope="col">Type</th>
+			<th scope="col">Default</th>
+			<th scope="col">Range</th>
+		</tr>
+	</thead>
+	<tbody><tr>
+			<td><a href="/opcodes/cutoff2">cutoff2</a></td>
+			<td>Same as <a href="/opcodes/cutoff">cutoff</a>, but used to specify the cutoff for the second filter.</td>
+			<td>float</td>
+			<td>filter disabled</td>
+			<td>0 to SampleRate / 2 Hz</td>
+		</tr><tr>
+			<td><a href="/opcodes/cutoff2_onccN">cutoff2_onccN</a></td>
+			<td>The variation in the cutoff frequency when MIDI continuous controller N is received.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>-9600 to 9600 cents</td>
+		</tr><tr>
+			<td><a href="/opcodes/cutoff2_curveccN">cutoff2_curveccN</a></td>
+			<td></td>
+			<td>integer</td>
+			<td>0</td>
+			<td>-9600 to 9600 cents</td>
+		</tr><tr>
+			<td><a href="/opcodes/cutoff2_smoothccN">cutoff2_smoothccN</a></td>
+			<td></td>
+			<td>integer</td>
+			<td>0</td>
+			<td>-9600 to 9600 cents</td>
+		</tr><tr>
+			<td><a href="/opcodes/cutoff2_stepccN">cutoff2_stepccN</a></td>
+			<td></td>
+			<td>integer</td>
+			<td>0</td>
+			<td>-9600 to 9600 cents</td>
+		</tr><tr>
+			<td><a href="/opcodes/fil2_keycenter">fil2_keycenter</a></td>
+			<td>Same as <a href="/opcodes/fil_keycenter">fil_keycenter</a>, but used to specify the type for the second filter.</td>
+			<td>integer</td>
+			<td>60</td>
+			<td>0 to 127 </td>
+		</tr><tr>
+			<td><a href="/opcodes/fil2_keytrack">fil2_keytrack</a></td>
+			<td>Same as <a href="/opcodes/fil_keytrack">fil_keytrack</a>, but used to specify the type for the second filter.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>0 to 1200 cents</td>
+		</tr><tr>
+			<td><a href="/opcodes/fil2_type">fil2_type</a></td>
+			<td>Same as <a href="/opcodes/fil_type">fil_type</a>, but used to specify the type for the second filter.</td>
+			<td>string</td>
+			<td>lpf_2p</td>
+			<td>lpf_1p, hpf_1p, lpf_2p, hpf_2p, bpf_2p, brf_2p, bpf_1p, brf_1p, apf_1p, lpf_2p_sv, hpf_2p_sv, bpf_2p_sv, brf_2p_sv, pkf_2p, lpf_4p, hpf_4p, lpf_6p, hpf_6p, comb, pink</td>
+		</tr><tr>
+			<td><a href="/opcodes/fil2_veltrack">fil2_veltrack</a></td>
+			<td>Same as <a href="/opcodes/fil_veltrack">fil_veltrack</a>, but used to specify the type for the second filter.</td>
+			<td>integer</td>
+			<td>0</td>
+			<td>-9600 to 9600 cents</td>
+		</tr><tr>
+			<td><a href="/opcodes/resonance2">resonance2</a></td>
+			<td>Same as <a href="/opcodes/resonance">resonance</a>, but used to specify the resonance for the second filter.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 40 dB</td>
+		</tr><tr>
+			<td><a href="/opcodes/resonance2_onccN">resonance2_onccN</a></td>
+			<td></td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 40 dB</td>
+		</tr><tr>
+			<td><a href="/opcodes/resonance2_curveccN">resonance2_curveccN</a></td>
+			<td></td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 40 dB</td>
+		</tr><tr>
+			<td><a href="/opcodes/resonance2_smoothccN">resonance2_smoothccN</a></td>
+			<td></td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 40 dB</td>
+		</tr><tr>
+			<td><a href="/opcodes/resonance2_stepccN">resonance2_stepccN</a></td>
+			<td></td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 40 dB</td>
+		</tr></tbody>
+</table>
+<h2><a href="/misc/categories#performance-parameters">Performance Parameters</a>: Pitch</h2>
+<table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">Opcode</th>
+			<th scope="col">Description</th>
+			<th scope="col">Type</th>
+			<th scope="col">Default</th>
+			<th scope="col">Range</th>
+		</tr>
+	</thead>
+	<tbody><tr>
+			<td><a href="/opcodes/bend_stepup">bend_stepup</a></td>
+			<td>Pitch bend step, in cents, applied to upwards bends only.</td>
+			<td>integer</td>
+			<td>1</td>
+			<td>1 to 1200 cents</td>
+		</tr><tr>
+			<td><a href="/opcodes/bend_stepdown">bend_stepdown</a></td>
+			<td>Pitch bend step, in cents, for downward pitch bends.</td>
+			<td>integer</td>
+			<td>1</td>
+			<td>1 to 1200 cents</td>
+		</tr></tbody>
+</table>
+<h2><a href="/misc/categories#modulation">Modulation</a>: <a href="/types/envelope_generators">Envelope Generators</a></h2>
+<table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">Opcode</th>
+			<th scope="col">Description</th>
+			<th scope="col">Type</th>
+			<th scope="col">Default</th>
+			<th scope="col">Range</th>
+		</tr>
+	</thead>
+	<tbody><tr>
+			<td><a href="/opcodes/egN_points">egN_points</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_timeX">egN_timeX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_timeX_onccY">egN_timeX_onccY</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_levelX">egN_levelX</a></td>
+			<td>Sets the envelope level at a specific point in envelope number N.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>-1 to 1 </td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_levelX_onccY">egN_levelX_onccY</a></td>
+			<td></td>
+			<td>float</td>
+			<td>0</td>
+			<td>-1 to 1 </td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_shapeX">egN_shapeX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_curveX">egN_curveX</a></td>
+			<td>Instructs the player to use a curve shape defined under a curve header for the specified envelope segment.</td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_sustain">egN_sustain</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_loop">egN_loop</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_loop_count">egN_loop_count</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_volume">egN_volume</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_volume_onccX">egN_volume_onccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_amplitude">egN_amplitude</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_amplitude_onccX">egN_amplitude_onccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_pan">egN_pan</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_pan_onccX">egN_pan_onccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_width">egN_width</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_width_onccX">egN_width_onccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_pan_curve">egN_pan_curve</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_pan_curveccX">egN_pan_curveccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_freq_lfoX">egN_freq_lfoX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_depth_lfoX">egN_depth_lfoX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_depthadd_lfoX">egN_depthadd_lfoX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_pitch">egN_pitch</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_pitch_onccX">egN_pitch_onccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_cutoff">egN_cutoff</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_cutoff_onccX">egN_cutoff_onccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_cutoff2">egN_cutoff2</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_cutoff2_onccX">egN_cutoff2_onccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_resonance">egN_resonance</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_resonance_onccX">egN_resonance_onccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_resonance2">egN_resonance2</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_resonance2_onccX">egN_resonance2_onccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_eqXfreq">egN_eqXfreq</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_eqXfreq_onccY">egN_eqXfreq_onccY</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_eqXbw">egN_eqXbw</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_eqXbw_onccY">egN_eqXbw_onccY</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_eqXgain">egN_eqXgain</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/egN_eqXgain_onccY">egN_eqXgain_onccY</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr></tbody>
+</table>
+<h2><a href="/misc/categories#modulation">Modulation</a>: <a href="/types/lfo">LFO</a></h2>
+<table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">Opcode</th>
+			<th scope="col">Description</th>
+			<th scope="col">Type</th>
+			<th scope="col">Default</th>
+			<th scope="col">Range</th>
+		</tr>
+	</thead>
+	<tbody><tr>
+			<td><a href="/opcodes/lfoN_freq">lfoN_freq</a></td>
+			<td>The base frequency of LFO number N, in Hertz.</td>
+			<td>integer</td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_freq_onccX">lfoN_freq_onccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_freq_smoothccX">lfoN_freq_smoothccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_freq_stepccX">lfoN_freq_stepccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_delay">lfoN_delay</a></td>
+			<td>Onset delay for LFO number N.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_delay_onccX">lfoN_delay_onccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_fade">lfoN_fade</a></td>
+			<td>Fade-in time for LFO number N.</td>
+			<td>float</td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_fade_onccX">lfoN_fade_onccX</a></td>
+			<td></td>
+			<td>float</td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_phase">lfoN_phase</a></td>
+			<td>Initial phase shift for LFO number N.</td>
+			<td>float</td>
+			<td>0</td>
+			<td>0 to 1 </td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_phase_onccX">lfoN_phase_onccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_count">lfoN_count</a></td>
+			<td>Number of LFO repetitions for LFO N before the LFO stops.</td>
+			<td>integer</td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_wave">lfoN_wave</a></td>
+			<td>LFO waveform selection.</td>
+			<td>integer</td>
+			<td>1</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_steps">lfoN_steps</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_stepX">lfoN_stepX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_smooth">lfoN_smooth</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_smooth_onccX">lfoN_smooth_onccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_volume">lfoN_volume</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_volume_onccX">lfoN_volume_onccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_volume_smoothccX">lfoN_volume_smoothccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_volume_stepccX">lfoN_volume_stepccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_amplitude">lfoN_amplitude</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_amplitude_onccX">lfoN_amplitude_onccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_amplitude_smoothccX">lfoN_amplitude_smoothccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_amplitude_stepccX">lfoN_amplitude_stepccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_pan">lfoN_pan</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_pan_onccX">lfoN_pan_onccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_pan_smoothccX">lfoN_pan_smoothccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_pan_stepccX">lfoN_pan_stepccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_width">lfoN_width</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_width_onccX">lfoN_width_onccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_width_smoothccX">lfoN_width_smoothccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_width_stepccX">lfoN_width_stepccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_freq_lfoX">lfoN_freq_lfoX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_depth_lfoX">lfoN_depth_lfoX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_depthadd_lfoX">lfoN_depthadd_lfoX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_pitch">lfoN_pitch</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_pitch_onccX">lfoN_pitch_onccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_pitch_smoothccX">lfoN_pitch_smoothccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_pitch_stepccX">lfoN_pitch_stepccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_cutoff">lfoN_cutoff</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_cutoff_onccX">lfoN_cutoff_onccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_cutoff_smoothccX">lfoN_cutoff_smoothccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_cutoff_stepccX">lfoN_cutoff_stepccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_cutoff2">lfoN_cutoff2</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_cutoff2_onccX">lfoN_cutoff2_onccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_cutoff2_smoothccX">lfoN_cutoff2_smoothccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_cutoff2_stepccX">lfoN_cutoff2_stepccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_resonance">lfoN_resonance</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_resonance_onccX">lfoN_resonance_onccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_resonance_smoothccX">lfoN_resonance_smoothccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_resonance_stepccX">lfoN_resonance_stepccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_resonance2">lfoN_resonance2</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_resonance2_onccX">lfoN_resonance2_onccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_resonance2_smoothccX">lfoN_resonance2_smoothccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_resonance2_stepccX">lfoN_resonance2_stepccX</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_eqXfreq">lfoN_eqXfreq</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_eqXfreq_onccY">lfoN_eqXfreq_onccY</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_eqXfreq_smoothccY">lfoN_eqXfreq_smoothccY</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_eqXfreq_stepccY">lfoN_eqXfreq_stepccY</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_eqXbw">lfoN_eqXbw</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_eqXbw_onccY">lfoN_eqXbw_onccY</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_eqXbw_smoothccY">lfoN_eqXbw_smoothccY</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_eqXbw_stepccY">lfoN_eqXbw_stepccY</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_eqXgain">lfoN_eqXgain</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_eqXgain_onccY">lfoN_eqXgain_onccY</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_eqXgain_smoothccY">lfoN_eqXgain_smoothccY</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr><tr>
+			<td><a href="/opcodes/lfoN_eqXgain_stepccY">lfoN_eqXgain_stepccY</a></td>
+			<td></td>
+			<td></td>
+			<td>N/A</td>
+			<td>N/A</td>
+		</tr></tbody>
+</table>
+<h2>Curves</h2>
+<table class="table table-sm table-bordered table-hover table-striped table-responsive-xl">
+	<thead class="thead-dark">
+		<tr>
+			<th scope="col">Opcode</th>
+			<th scope="col">Description</th>
+			<th scope="col">Type</th>
+			<th scope="col">Default</th>
+			<th scope="col">Range</th>
+		</tr>
+	</thead>
+	<tbody><tr>
+			<td><a href="/opcodes/curve_index">curve_index</a></td>
+			<td>Curve ID definition.</td>
+			<td>integer</td>
+			<td>N/A</td>
+			<td>0 to N/A </td>
+		</tr><tr>
+			<td><a href="/opcodes/vN">vN</a></td>
+			<td></td>
+			<td>float</td>
+			<td>N/A</td>
+			<td>-1 to 1 </td>
+		</tr></tbody>
+</table>
+
+					</article>
+				</div>
+				<div class="col-md-3">
+					<aside>
+
+						<div class="card border-dark mb-3">
+							<div class="card-header text-light"
+								style="background-color:#222">
+								<i class="fas fa-eye"
+									aria-hidden="true"></i>
+								Follow us
+							</div>
+							<div class="card-body" style="padding: 0.5rem">
+								<ul class="nav nav-pills flex-column">
+	<li class="nav-item">
+										<a class="nav-link" href="https://github.com/sfzformat/"
+											title="GitHub Organization" style="padding: 0.35rem 0.25rem">
+										<i class="fab fa-github fa-fw"
+										aria-hidden="true"></i>
+										GitHub Organization</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://www.plogue.com/plgfrms/viewforum.php?f=14"
+											title="Plogue Forum" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-users fa-fw"
+										aria-hidden="true"></i>
+										Plogue Forum</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://discord.gg/t7nrZ6d"
+											title="Discord Chat" style="padding: 0.35rem 0.25rem">
+										<i class="fab fa-discord fa-fw"
+										aria-hidden="true"></i>
+										Discord Chat</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://kiwiirc.com/nextclient/#irc://irc.freenode.net:+6697/#sfzformat"
+											title="Internet Relay Chat" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-hashtag fa-fw"
+										aria-hidden="true"></i>
+										IRC</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="/atom.xml"
+											title="News Atom Feed" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-rss fa-fw"
+										aria-hidden="true"></i>
+										News Atom Feed</a>
+									</li>
+	
+								</ul>
+							</div>
+						</div>
+
+						<div class="card border-dark mb-3">
+							<div class="card-header text-light"
+								style="background-color:#222">
+								<i class="fas fa-link"
+									aria-hidden="true"></i>
+								Quick links
+							</div>
+							<div class="card-body" style="padding: 0.5rem">
+								<ul class="nav nav-pills flex-column">
+	<li class="nav-item">
+										<a class="nav-link" href="/legacy"
+											title="Old rgc:audio SFZ page" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-book fa-fw"
+										aria-hidden="true"></i>
+										Old rgc:audio SFZ page</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="http://www.drealm.info/sfz/"
+											title="Peter L. Jones' SFZ page" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-book fa-fw"
+										aria-hidden="true"></i>
+										Peter L. Jones' SFZ page</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://github.com/sfzinstruments/"
+											title="Free SFZ Instruments" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-download fa-fw"
+										aria-hidden="true"></i>
+										Free SFZ Instruments</a>
+									</li>
+	<li class="nav-item">
+										<a class="nav-link" href="https://www.kvraudio.com/forum/viewtopic.php?f=42&t=508861"
+											title="KVR Forum SFZ post" style="padding: 0.35rem 0.25rem">
+										<i class="fas fa-users fa-fw"
+										aria-hidden="true"></i>
+										KVR Forum SFZ post</a>
+									</li>
+	
+								</ul>
+							</div>
+						</div>
+
+
+					</aside>
+				</div>
+			</div>
+			<hr>
+			<footer><p>
+					This site is open source.
+					<a href="https://github.com/sfzformat/sfzformat.github.io/edit/source/misc/sfz2.md">
+					Improve this page</a>
+				</p>
+			</footer>
+
+		</div>
+		<script src="/assets/js/scripts.min.js"></script>		<script type="text/javascript" src="/assets/js/prettify/prettify.min.js"></script>
+		<script type="text/javascript" src="/assets/js/prettify/lang-sfz.js"></script>
+		<script>
+			$(document).ready(function(){
+			$('pre').addClass('prettyprint lang-sfz');
+			prettyPrint();
+			});
+		</script>
+
+
+	</body>
+</html>
